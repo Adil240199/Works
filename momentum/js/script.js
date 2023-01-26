@@ -1,0 +1,251 @@
+const time = document.querySelector(".time");
+
+function showTime() {
+  let date = new Date();
+  let hours = date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
+  let minutes =
+    date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
+  let second =
+    date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
+
+  time.innerHTML = `${hours}:${minutes}:${second}`;
+}
+setInterval(showTime, 1000);
+
+function showDate() {
+  let newDate = new Date();
+  const options = {
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+    timeZone: "UTC",
+  };
+  const currentDate = newDate.toLocaleDateString("en-US", options);
+
+  let year = (document.querySelector(".date").innerHTML = currentDate);
+}
+setInterval(showDate, 1000);
+
+let greet = document.querySelector(".greeting");
+let dateTimeDay = new Date();
+const hour = dateTimeDay.getHours();
+let minute = dateTimeDay.getMinutes();
+function getTimeOfDay() {
+  let dateTimeDay = new Date();
+  let hour = dateTimeDay.getHours();
+  let minute = dateTimeDay.getMinutes();
+  let greeting;
+
+  if (hour >= 6 && hour < 12) {
+    greeting = "Good morning";
+  } else if (hour >= 12 && hour < 18) {
+    greeting = "Good afternoon";
+  } else if (hour >= 18 && hour < 24) {
+    greeting = "Good evening";
+  } else {
+    greeting = "Good nigh";
+  }
+  return (greet.textContent = `${greeting}`);
+}
+
+setInterval(getTimeOfDay, 1000);
+
+const name = document.querySelector(".name");
+function setLocalStorage() {
+  localStorage.setItem("name", name.value);
+}
+window.addEventListener("beforeunload", setLocalStorage);
+
+function getLocalStorage() {
+  if (localStorage.getItem("name")) {
+    name.value = localStorage.getItem("name");
+  }
+}
+window.addEventListener("load", getLocalStorage);
+
+function getRandomNum(min, max) {
+  min = Math.ceil(1);
+  max = Math.floor(21);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+const body = document.body;
+let timeOfDay;
+function setBg() {
+  let bgNum = getRandomNum();
+  let result = String(bgNum);
+  let res = result.padStart(2, "0");
+  if (hour >= 6 && hour < 12) {
+    timeOfDay = "morning";
+  } else if (hour >= 12 && hour < 18) {
+    timeOfDay = "afternoon";
+  } else if (hour >= 18 && hour < 24) {
+    timeOfDay = "evening";
+  } else {
+    timeOfDay = "night";
+  }
+  return (body.style.backgroundImage = `url('https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${timeOfDay}/${res}.jpg')`);
+}
+
+console.log(setBg());
+
+const slideNext = document.querySelector(".slide-next");
+let slidePrev = document.querySelector(".slide-prev");
+
+let randomNum = 1;
+slideNext.addEventListener("click", function () {
+  randomNum++;
+  randomNum >= 21 ? (randomNum = 1) : randomNum;
+  let NumberToString = String(randomNum);
+  let resNext = NumberToString.padStart(2, "0");
+  return (body.style.backgroundImage = `url('https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${timeOfDay}/${resNext}.jpg')`);
+});
+
+slidePrev.addEventListener("click", function () {
+  randomNum--;
+  randomNum <= 0 ? (randomNum = 20) : randomNum;
+  let NumberToString = String(randomNum);
+  let resPrev = NumberToString.padStart(2, "0");
+  return (body.style.backgroundImage = `url('https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${timeOfDay}/${resPrev}.jpg')`);
+});
+
+const weatherIcon = document.querySelector(".weather-icon");
+const temperature = document.querySelector(".temperature");
+const weatherDescription = document.querySelector(".weather-description");
+const wind = document.querySelector(".wind");
+const humidity = document.querySelector(".humidity");
+const weatherError = document.querySelector(".weather-error");
+const city = document.querySelector(".city");
+
+async function getWeather() {
+  try {
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=ru&appid=8b1fb6eb512a779063ba491381ebe4d6&units=metric`;
+    weatherError.textContent = "";
+    const res = await fetch(url);
+    const data = await res.json();
+    weatherIcon.className = "weather-icon owf";
+    weatherIcon.classList.add(`owf-${data.weather[0].id}`);
+    weatherIcon.classList.add("res");
+    wind.textContent = `Wind speed:${Math.round(data.wind.speed)}m/s`;
+    temperature.textContent = `${Math.round(data.main.temp)}°C`;
+    humidity.textContent = `Humidity:${data.main.humidity}%`;
+    weatherDescription.textContent = data.weather[0].description;
+  } catch (Error) {
+    weatherError.textContent = "Error! Nothing to geocode for ''!";
+    wind.textContent = "";
+    temperature.textContent = "";
+    humidity.textContent = "";
+    weatherDescription.textContent = "";
+  }
+}
+
+getWeather();
+
+city.addEventListener("change", getWeather);
+function setLocalStorageCity() {
+  localStorage.setItem("city", city.value);
+}
+window.addEventListener("beforeunload", setLocalStorageCity);
+
+function getLocalStorageCity() {
+  if (localStorage.getItem("city")) {
+    city.value = localStorage.getItem("city");
+  }
+}
+window.addEventListener("load", getLocalStorageCity);
+
+const quote = document.querySelector(".quote");
+const author = document.querySelector(".author");
+const changeQuote = document.querySelector(".change-quote");
+async function getQuotes() {
+  const quotes = "data.json";
+  const res = await fetch(quotes);
+  const data = await res.json();
+  const randomIndex = Math.floor(Math.random() * (data.length - 1));
+  const resu = data[randomIndex];
+  return (
+    (quote.textContent = `${resu.text}`),
+    (author.textContent = `${resu.author}`)
+  );
+}
+getQuotes();
+
+changeQuote.addEventListener("click", getQuotes);
+
+const audio = document.querySelector(".audio");
+const playItem = document.querySelectorAll(".play-item");
+const songs = [
+  "assets_sounds_AquaCaelestis",
+  "assets_sounds_Ennio Morricone",
+  "assets_sounds_River Flows In You",
+  "assets_sounds_Summer Wind",
+];
+let songIndex = 0;
+function loadSong(song) {
+  playItem[`${songIndex}`].style.color = "rgb(162, 222, 229)";
+  audio.src = `../assets/sounds/${song}.mp3`;
+}
+loadSong(songs[songIndex]);
+
+const play = document.querySelector(".play");
+let playNum = 0;
+let isPlay = false;
+function playAudio() {
+  if (!isPlay) {
+    audio.currentTime = 0;
+    audio.play();
+    isPlay = true;
+    play.classList.add("pause");
+  } else {
+    audio.currentTime = 0;
+    audio.pause();
+    isPlay = false;
+    play.classList.remove("pause");
+  }
+}
+play.addEventListener("click", playAudio);
+
+const playNext = document.querySelector(".play-next");
+playNext.addEventListener("click", function () {
+  songIndex++;
+  playItem[`${songIndex - 1}`].style.color = "white";
+  if (songIndex > songs.length - 1) {
+    songIndex = 0
+  }
+  loadSong(songs[songIndex]);
+  playAudio();
+});
+
+const playPrev = document.querySelector(".play-prev");
+playPrev.addEventListener("click", function () {
+  songIndex--;
+  playItem[`${songIndex + 1}`].style.color = "white";
+  if (songIndex < 0) {
+    songIndex = songs.length -1 
+  }
+  loadSong(songs[songIndex]);
+  playAudio();
+});
+
+
+// Progress bar
+const progress = document.querySelector('.progress') 
+function UpdateProgress (e){
+  const { duration, currentTime} = e.srcElement
+  const progressPercent = (currentTime/duration)*100
+  progress.style.width = `${progressPercent}%`
+}
+audio.addEventListener('timeupdate',UpdateProgress)
+
+const progressContainer = document.querySelector('.progress-block')
+function setProgress(e){
+  const width = this.clientWidth
+  const clickX = e.offsetX;
+  const duration = audio.duration
+
+  audio.currentTime = (clickX / width)* duration
+ 
+}
+progressContainer.addEventListener('click',setProgress)
+
+
