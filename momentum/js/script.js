@@ -183,7 +183,7 @@ const songs = [
 let songIndex = 0;
 function loadSong(song) {
   playItem[`${songIndex}`].style.color = "rgb(162, 222, 229)";
-  audio.src = `../assets/sounds/${song}.mp3`;
+  audio.src = `./assets/sounds/${song}.mp3`;
 }
 loadSong(songs[songIndex]);
 
