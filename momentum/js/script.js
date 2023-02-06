@@ -25,7 +25,10 @@ function showDate() {
   let year = (document.querySelector(".date").innerHTML = currentDate);
 }
 setInterval(showDate, 1000);
-
+let Gmorning = "Good morning";
+let Gafternoon = "Good afternoon";
+let Gevening = "Good evening";
+let Gnight = "Good nigh";
 let greet = document.querySelector(".greeting");
 let dateTimeDay = new Date();
 const hour = dateTimeDay.getHours();
@@ -37,13 +40,13 @@ function getTimeOfDay() {
   let greeting;
 
   if (hour >= 6 && hour < 12) {
-    greeting = "Good morning";
+    greeting = `${Gmorning}`;
   } else if (hour >= 12 && hour < 18) {
-    greeting = "Good afternoon";
+    greeting = `${Gafternoon}`;
   } else if (hour >= 18 && hour < 24) {
-    greeting = "Good evening";
+    greeting = `${Gevening}`;
   } else {
-    greeting = "Good nigh";
+    greeting = `${Gnight}`;
   }
   return (greet.textContent = `${greeting}`);
 }
@@ -172,6 +175,8 @@ getQuotes();
 
 changeQuote.addEventListener("click", getQuotes);
 
+// player 
+
 const audio = document.querySelector(".audio");
 const playItem = document.querySelectorAll(".play-item");
 const songs = [
@@ -210,7 +215,7 @@ playNext.addEventListener("click", function () {
   songIndex++;
   playItem[`${songIndex - 1}`].style.color = "white";
   if (songIndex > songs.length - 1) {
-    songIndex = 0
+    songIndex = 0;
   }
   loadSong(songs[songIndex]);
   playAudio();
@@ -221,31 +226,94 @@ playPrev.addEventListener("click", function () {
   songIndex--;
   playItem[`${songIndex + 1}`].style.color = "white";
   if (songIndex < 0) {
-    songIndex = songs.length -1 
+    songIndex = songs.length - 1;
   }
   loadSong(songs[songIndex]);
   playAudio();
 });
 
-
 // Progress bar
-const progress = document.querySelector('.progress') 
-function UpdateProgress (e){
-  const { duration, currentTime} = e.srcElement
-  const progressPercent = (currentTime/duration)*100
-  progress.style.width = `${progressPercent}%`
+const progress = document.querySelector(".progress");
+function UpdateProgress(e) {
+  const { duration, currentTime } = e.srcElement;
+  const progressPercent = (currentTime / duration) * 100;
+  progress.style.width = `${progressPercent}%`;
 }
-audio.addEventListener('timeupdate',UpdateProgress)
+audio.addEventListener("timeupdate", UpdateProgress);
 
-const progressContainer = document.querySelector('.progress-block')
-function setProgress(e){
-  const width = this.clientWidth
+const progressContainer = document.querySelector(".progress-block");
+function setProgress(e) {
+  const width = this.clientWidth;
   const clickX = e.offsetX;
-  const duration = audio.duration
+  const duration = audio.duration;
 
-  audio.currentTime = (clickX / width)* duration
- 
+  audio.currentTime = (clickX / width) * duration;
 }
-progressContainer.addEventListener('click',setProgress)
+progressContainer.addEventListener("click", setProgress);
 
+// translater
+
+const LangGreet = {
+  Morning: {
+    ru: "Доброе утро",
+    en: "Good morning",
+  },
+  Afternoon: {
+    ru: "Добрый день",
+    en: "Good afternoon",
+  },
+  Evening: {
+    ru: "Добрый вечер",
+    en: "Good evening",
+  },
+  Night: {
+    en: "Good night",
+    ru: "Доброй ночи",
+  }
+};
+const blockLang = document.querySelector(".block_lang");
+blockLang.addEventListener("change", changeURLLanguage);
+const allLang = ["en", "ru"];
+
+function changeURLLanguage() {
+  let lang = blockLang.value;
+  location.href = window.location.pathname + "#" + lang;
+  location.reload();
+}
+
+function changeLanguage() {
+  let hash = window.location.hash;
+  hash = hash.substr(1);
+  if (!allLang.includes(hash)) {
+    location.href = window.location.pathname + "#en";
+    location.reload();
+  }
+  blockLang.value = hash;
+  // Не судить строго мой первый перевод стриницы
+  Gmorning = LangGreet["Morning"][hash];
+  Gafternoon = LangGreet["Afternoon"][hash];
+  Gevening = LangGreet["Evening"][hash];
+  Gnight = LangGreet["Night"][hash];
+}
+changeLanguage();
+
+// setting
+let setitingIcon = document.querySelector('.setting-icon')
+let setting = document.querySelector('.setting')
+let player = document.querySelector('.player'),
+weather = document.querySelector('.weather')
+
+let zadekidesNaxamopud = document.querySelectorAll('.zadekides-naxamopud')
+function menuSetting() {
+  setting.classList.toggle('visible');
+}
+setitingIcon.addEventListener('click',menuSetting)
+
+
+zadekidesNaxamopud[0].addEventListener('click',function audioHiden () {
+  player.classList.toggle('hide');
+})
+zadekidesNaxamopud[1].addEventListener('click',function WeatherHiden () {
+  weather.classList.toggle('hide');
+})
 

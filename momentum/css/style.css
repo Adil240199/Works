@@ -7,6 +7,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  transition: 1.5s;
 }
 
 body {
@@ -20,6 +21,160 @@ body {
   background-blend-mode: multiply;
   transition: background-image 1s ease-in-out;
 }
+.setting{
+position: absolute;
+top: 2%;
+width:40%;
+height:auto;
+background: hsla(205, 100%, 69%, 0.7);
+color:#fff;
+font-size:25px;
+border:3px solid #2BA2DB;
+padding:20px;
+border-radius: 10px;
+opacity:0; 
+transition: 1s;
+z-index: -100;
+}
+.visible{
+  opacity:1;
+  transition: 1s;
+  z-index: 200;
+}
+.hide{
+  opacity: 0;
+  transition: 1s;
+  z-index: -100;
+}
+.setting-icon{
+  padding: 3px;
+  position: absolute;
+  width: 50px;
+  bottom: 20px;
+  right: 15px;
+  background: #c7c7c7;
+  border-radius: 50%;
+  opacity: 0.4;
+  cursor: pointer;
+}
+.block_lang{
+  border: none;
+  outline: none;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  height: 30px;
+  border-radius: 10px;
+  background-color: rgb(212, 255, 252);
+  padding: 5px;
+  font-size: 20px;
+  font-weight: 500;
+  }
+.hiden-block{
+  list-style: none;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+.item-hiden-block{
+  margin-bottom: 50px;
+  text-align: left;
+  display: flex;
+  justify-content:space-between ;
+}
+.zadekides-naxamopud {
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  width: 80px;
+  height: 30px;
+  -webkit-border-radius: 30px;
+  border-radius: 30px;
+  line-height: 1.2;
+  font-size: 14px;
+}
+
+.zadekides-naxamopud input.input-checkbox {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 80px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.zadekides-naxamopud .kalsetuoigu-kevasukopmad {
+  position: relative;
+  width: 80px;
+  height: 30px;
+  background-color: #95a5a6;
+}
+
+.zadekides-naxamopud .kalsetuoigu-kevasukopmad:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  background-color: #7f8c8d;
+  top: 5px;
+  left: 5px;
+  -webkit-transition: left 0.3s ease-out 0s;
+  transition: left 0.3s ease-out 0s;
+  z-index: 10;
+}
+
+.zadekides-naxamopud input.input-checkbox:checked + .kalsetuoigu-kevasukopmad {
+  background-color: #2ecc71;
+}
+
+.zadekides-naxamopud input.input-checkbox:checked + .kalsetuoigu-kevasukopmad:before {
+  left: 55px;
+  background-color: #27ae60;
+}
+
+.zadekides-naxamopud .perekligas-vk,
+.zadekides-naxamopud .perekligas-vu {
+  float: left;
+  color: #fff;
+  font-weight: 700;
+  padding-top: 6px;
+  -webkit-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+
+.zadekides-naxamopud .perekligas-vk {
+  margin-left: 30px;
+  opacity: 1;
+}
+
+.zadekides-naxamopud .perekligas-vu {
+  display: none;
+  float: right;
+  margin-right: 35px;
+  opacity: 0;
+}
+
+.zadekides-naxamopud input.input-checkbox:checked + .kalsetuoigu-kevasukopmad .perekligas-vk {
+  display: none;
+  opacity: 0;
+}
+
+.zadekides-naxamopud input.input-checkbox:checked + .kalsetuoigu-kevasukopmad .perekligas-vu {
+  display: block;
+  opacity: 1;
+}
 
 .header {
   display: flex;
@@ -30,8 +185,6 @@ body {
   min-height: 220px;
   padding: 20px;
 }
-.res
-
 .player-controls {
   display: flex;
   align-items: center;
@@ -39,6 +192,7 @@ body {
   width: 120px;
   margin-bottom: 28px;
 }
+
 
 .play-list {
   text-align: left;
@@ -123,7 +277,7 @@ body {
   margin-bottom: 3px;
   display: flex;
   align-items: center;
-  width: 200px;
+  width: 125px;
   height: 5px;
   background-color: #fff;
   border-radius: 5px;
