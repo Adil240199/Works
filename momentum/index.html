@@ -10,8 +10,6 @@
 </head>
 <body>
   <header class="header">
-
-    
     <div class="player">
       <audio class="audio" src="./assets/sounds/assets_sounds_AquaCaelestis.mp3"></audio>
       <div class="player-controls">
@@ -32,7 +30,7 @@
 
 
     <div class="weather">
-      <input type="text"  class="city"  placeholder="[Enter city]" value="Budapest">
+      <input type="text"  class="Lng-city city"  placeholder="[Enter city]" value="Budapest">
       <i class="weather-icon  owf"></i>
       <div class="weather-error"></div>
       <div class="description-container">
@@ -53,7 +51,7 @@
     <date class="date"></date>
     <div class="greeting-container">
       <span class="greeting"></span>
-      <input type="text" class="name" placeholder="[Enter name]"/>
+      <input type="text" class="name" placeholder="Enter name"/>
     </div>
   </main>
 
@@ -63,6 +61,60 @@
       <div class="quote"></div>
       <div class="author"></div>
     </div>
+
+    <div class="setting"> <select name="select" class="block_lang">
+      <option value="en">En</option>
+      <option value="ru">Ru</option>
+     </select>
+    <ul class="hiden-block">
+      <li class="item-hiden-block">Audio
+       <!--скопирован чужой код для тумблера (переключателя)так как не хотел тратить на это много времени-->
+	      <div style="text-align:center">
+          <div class="zadekides-naxamopud">
+          <input type="checkbox" checked="" onchange="T.toggleToobarStatus()" value="1" name="status" class="input-checkbox" id="toolbar-active">
+          <div class="kalsetuoigu-kevasukopmad">
+          <span class="perekligas-vk">OFF</span>
+          <span class="perekligas-vu">ON</span>
+          </div>
+          </div>
+          </div>
+      </li>
+      <li class="item-hiden-block">Weather
+        <div style="text-align:center">
+          <div class="zadekides-naxamopud">
+          <input type="checkbox" checked="" onchange="T.toggleToobarStatus()" value="1" name="status" class="input-checkbox" id="toolbar-active">
+          <div class="kalsetuoigu-kevasukopmad">
+          <span class="perekligas-vk">OFF</span>
+          <span class="perekligas-vu">ON</span>
+          </div>
+          </div>
+          </div>
+      </li>
+      <li class="item-hiden-block">Date
+        <div style="text-align:center">
+          <div class="zadekides-naxamopud">
+          <input type="checkbox" checked="" onchange="T.toggleToobarStatus()" value="1" name="status" class="input-checkbox" id="toolbar-active">
+          <div class="kalsetuoigu-kevasukopmad">
+          <span class="perekligas-vk">OFF</span>
+          <span class="perekligas-vu">ON</span>
+          </div>
+          </div>
+          </div>
+      </li>
+      <li class="item-hiden-block">Greeting
+        <div style="text-align:center">
+          <div class="zadekides-naxamopud">
+          <input type="checkbox" checked="" onchange="T.toggleToobarStatus()" value="1" name="status" class="input-checkbox" id="toolbar-active">
+          <div class="kalsetuoigu-kevasukopmad">
+          <span class="perekligas-vk">OFF</span>
+          <span class="perekligas-vu">ON</span>
+          </div>
+          </div>
+          </div>
+      </li>
+    </ul></div>
+    <img class="setting-icon" src="./assets/svg/sETTING.png" alt="setting-icon">
+ 
   </footer>
   <script type="module" src="js/script.js "></script>
   
