@@ -175,7 +175,7 @@ getQuotes();
 
 changeQuote.addEventListener("click", getQuotes);
 
-// player 
+// player
 
 const audio = document.querySelector(".audio");
 const playItem = document.querySelectorAll(".play-item");
@@ -269,7 +269,7 @@ const LangGreet = {
   Night: {
     en: "Good night",
     ru: "Доброй ночи",
-  }
+  },
 };
 const blockLang = document.querySelector(".block_lang");
 blockLang.addEventListener("change", changeURLLanguage);
@@ -298,22 +298,38 @@ function changeLanguage() {
 changeLanguage();
 
 // setting
-let setitingIcon = document.querySelector('.setting-icon')
-let setting = document.querySelector('.setting')
-let player = document.querySelector('.player'),
-weather = document.querySelector('.weather')
+let setitingIcon = document.querySelector(".setting-icon");
+let setting = document.querySelector(".setting");
+let player = document.querySelector(".player"),
+  weather = document.querySelector(".weather"),
+  curDate = document.querySelector(".date"),
+  greetengCont = document.querySelector(".greeting-container");
 
-let zadekidesNaxamopud = document.querySelectorAll('.zadekides-naxamopud')
+let zadekidesNaxamopud = document.querySelectorAll(".zadekides-naxamopud");
 function menuSetting() {
-  setting.classList.toggle('visible');
+  setting.classList.toggle("visible");
 }
-setitingIcon.addEventListener('click',menuSetting)
+setitingIcon.addEventListener("click", menuSetting);
+let settingArr = [audioHiden, WeatherHiden,dateHiden,greetHiden]
+console.log(settingArr)
+function audioHiden() {
+  player.classList.toggle("hide");
+}
+function WeatherHiden() {
+  weather.classList.toggle("hide");
+}
+function dateHiden() {
+  time.classList.toggle("hide");
+  curDate.classList.toggle("hide");
+}
+function greetHiden() {
+  greetengCont.classList.toggle("hide");
+}
+zadekidesNaxamopud[0].addEventListener("click", audioHiden);
+zadekidesNaxamopud[1].addEventListener("click", WeatherHiden);
+zadekidesNaxamopud[2].addEventListener("click", dateHiden);
+zadekidesNaxamopud[3].addEventListener("click", greetHiden);
 
 
-zadekidesNaxamopud[0].addEventListener('click',function audioHiden () {
-  player.classList.toggle('hide');
-})
-zadekidesNaxamopud[1].addEventListener('click',function WeatherHiden () {
-  weather.classList.toggle('hide');
-})
+
 
