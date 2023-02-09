@@ -298,26 +298,26 @@ function changeLanguage() {
 changeLanguage();
 
 // setting
-let setitingIcon = document.querySelector(".setting-icon");
-let setting = document.querySelector(".setting");
-let player = document.querySelector(".player"),
+let setitingIcon = document.querySelector(".setting-icon"),
+  setting = document.querySelector(".setting"),
+  zadekidesNaxamopud = document.querySelectorAll(".zadekides-naxamopud"),
+  player = document.querySelector(".player"),
   weather = document.querySelector(".weather"),
   curDate = document.querySelector(".date"),
   greetengCont = document.querySelector(".greeting-container");
 
-let zadekidesNaxamopud = document.querySelectorAll(".zadekides-naxamopud");
 function menuSetting() {
   setting.classList.toggle("visible");
 }
 setitingIcon.addEventListener("click", menuSetting);
-let settingArr = [audioHiden, WeatherHiden,dateHiden,greetHiden]
-console.log(settingArr)
 function audioHiden() {
   player.classList.toggle("hide");
 }
+
 function WeatherHiden() {
   weather.classList.toggle("hide");
 }
+
 function dateHiden() {
   time.classList.toggle("hide");
   curDate.classList.toggle("hide");
@@ -330,6 +330,16 @@ zadekidesNaxamopud[1].addEventListener("click", WeatherHiden);
 zadekidesNaxamopud[2].addEventListener("click", dateHiden);
 zadekidesNaxamopud[3].addEventListener("click", greetHiden);
 
+// // function setLoc() {
+// //   localStorage['mykey'] = JSON.stringify();
 
-
-
+// // }
+// // window.addEventListener('beforeunload', setLoc)
+//  function getLoc() {
+//   let gi = localStorage.getItem('key')
+//    if (gi == true){
+//   return greetengCont.classList.add('hide')
+//    }
+// }
+// window.addEventListener("load", getLoc);
+// localStorage.clear()
