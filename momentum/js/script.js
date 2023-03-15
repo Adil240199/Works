@@ -304,7 +304,8 @@ let setitingIcon = document.querySelector(".setting-icon"),
   player = document.querySelector(".player"),
   weather = document.querySelector(".weather"),
   curDate = document.querySelector(".date"),
-  greetengCont = document.querySelector(".greeting-container");
+  greetengCont = document.querySelector(".greeting-container"),
+  hiden = document.querySelector(".hide");
 
 function menuSetting() {
   setting.classList.toggle("visible");
@@ -323,23 +324,85 @@ function dateHiden() {
   curDate.classList.toggle("hide");
 }
 function greetHiden() {
-  greetengCont.classList.toggle("hide");
+  let r = greetengCont.classList.toggle("hide");
 }
 zadekidesNaxamopud[0].addEventListener("click", audioHiden);
 zadekidesNaxamopud[1].addEventListener("click", WeatherHiden);
 zadekidesNaxamopud[2].addEventListener("click", dateHiden);
 zadekidesNaxamopud[3].addEventListener("click", greetHiden);
 
-// // function setLoc() {
-// //   localStorage['mykey'] = JSON.stringify();
+//TodoList
+let addMessage = document.querySelector(".message"),
+  addbutton = document.querySelector(".add"),
+  todo = document.querySelector(".todo");
 
-// // }
-// // window.addEventListener('beforeunload', setLoc)
-//  function getLoc() {
-//   let gi = localStorage.getItem('key')
-//    if (gi == true){
-//   return greetengCont.classList.add('hide')
-//    }
-// }
-// window.addEventListener("load", getLoc);
-// localStorage.clear()
+let todoList = [];
+
+if (localStorage.getItem("todo")) {
+  todoList = JSON.parse(localStorage.getItem("todo"));
+  displayMessages();
+}
+addbutton.addEventListener("click", function () {
+  let newTodo = {
+    todo: addMessage.value,
+    checked: false,
+    important: false,
+  };
+
+  todoList.push(newTodo);
+  displayMessages();
+  localStorage.setItem("todo", JSON.stringify(todoList));
+  addMessage.value = "";
+});
+
+function displayMessages() {
+  let displayMessage = "";
+  if (todoList.length === 0) todo.innerHTML = "";
+  todoList.forEach(function (item, i) {
+    displayMessage += ` 
+    <li>
+    <input type = 'checkbox' id = 'item_${i}' ${item.checked ? "checked" : ""}>
+    <label for = 'item_${i}' class="${item.important ? "important" : ""}">${
+      item.todo
+    }</label>
+    </li> `;
+    todo.innerHTML = displayMessage;
+  });
+}
+
+todo.addEventListener("change", function (event) {
+  let valueLabel = todo.querySelector(
+    "[for=" + event.target.getAttribute("id") + "]"
+  ).innerHTML;
+
+  todoList.forEach(function (item) {
+    if (item.todo === valueLabel) {
+      item.checked = !item.checked;
+      localStorage.setItem("todo", JSON.stringify(todoList));
+    }
+  });
+});
+
+//выделение важного
+todo.addEventListener("contextmenu", function (event) {
+  event.preventDefault();
+  todoList.forEach(function (item, i) {
+    if (item.todo === event.target.innerHTML) {
+      if (event.ctrlKey || event.metaKey) {
+        todoList.splice(i, 1);
+      } else {
+        item.important = !item.important;
+      }
+      displayMessages();
+      localStorage.setItem("todo", JSON.stringify(todoList));
+    }
+  });
+});
+
+//button todo
+let todoButton = document.querySelector('.todo-icon'),
+todoListBlock = document.querySelector('.todo_list')
+console.log(todoListBlock)
+todoButton.addEventListener('click', function(){
+todoListBlock.classList.toggle('visible')
+} )
