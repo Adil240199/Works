@@ -1,0 +1,282 @@
+
+@media only screen and (min-width:391px) {
+
+@import 'variables';
+@import 'mixin';
+@import 'resetStyles';
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0 px;
+    scroll-behavior: smooth;
+    text-decoration: none;
+    font-family: $Axiforma;
+  }
+  body {
+      width: 100%;
+      height: auto;
+  }
+    #container {
+        max-width: 1440px;
+        height: auto;
+        position: relative;
+        @include center;
+    }
+    
+    
+    header {
+      width: 100%;
+      background: var(--secondary, #FFF5F1);
+      padding: 30px;
+      display: flex;
+      margin-bottom: 0px;
+    }
+    h1 {
+      font-family:$Axiforma;
+      min-width: max-content;
+      color: var(--text-primary, #181B32);
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 28px;
+      margin-right: 65px;
+      display: flex;
+      align-items:center;
+    }
+    .navHeader{
+      width: 100%;
+      @include center;
+
+      .links{
+        width: 60%;
+        margin-top: 20px;
+        display: flex;
+        gap: 24px;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--body-text, #666680);
+        font-size: 14px;
+        font-family:$Axiforma;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 24px;
+      };
+    }
+    
+    .rightLinks{
+      width: 148px;
+      height: auto;
+      padding: 5px;
+      border-radius: 73px;
+background: var(--background-white, #FFF);
+    }
+  .signIn {
+    cursor: pointer;
+    text-align: center;
+    color: var(--primary-200, #524FD5);
+    font-family:$Axiforma;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+  }
+  
+    
+  
+  
+    
+    
+    main {
+      margin-top: -1px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    .section{
+      width: 100%;
+      @include paddingTandB;
+      box-shadow: 0px 3px 3px rgba(20, 13, 111, 0.5);
+      background: var(--secondary, #FFF5F1);
+      .underSect{
+        display: flex;
+        justify-content:space-between;
+        @include center;
+        width: 80%;
+        .titleWelcome{
+          margin-top: 40px;
+          display: block;
+          width: max-content;
+          @include center;
+          @include main-text;
+          font-family:$Axiforma;
+          .welcomeText{
+            @include main-text;
+            font-family:$Axiforma;
+            text-align: center;
+            margin-bottom: 5px;
+          }
+        };
+        .subTitle{
+          margin-top: 18px;
+          color: var(--body-text, #666680);
+          font-size: 18px;
+          font-family:'Axiforma',sans-serif;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 190%;
+          text-align: center;
+        };
+        .buttonTestLesson{
+          width: max-content;
+          margin-top: 30px;
+          padding: 10px;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          color: #fff;
+          border-radius: 73px;
+          background: var(--primary-200, #524FD5); 
+          font-size: 18px;
+          font-family:$Axiforma;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+        };
+        .buttonTestLesson:hover{
+          text-decoration: none;
+           background-color: rgb(186, 159, 176);
+           color: rgb(255, 255, 255);
+         };
+
+        
+        .photo{
+          width: 290px;
+          height: auto;
+          margin-left: -100px;
+        
+        };
+        };
+    };
+   
+    
+    
+  
+  
+    .sectionSecond{
+      width: 100%;
+      @include paddingTandB;
+      .title-cources{
+        margin-top: 10px;
+        text-align: center;
+        margin-bottom: 30px;
+        color: var(--text-primary, #181B32);
+font-size: 48px;
+font-family: $Axiforma;
+font-style: normal;
+font-weight: 300;
+line-height: 130%;
+      };
+      .cources{
+        width: 90%;
+        @include center;
+        display: flex;
+        justify-content: space-around;
+        .cource{
+          height: 391px;
+          width: 268px;
+          border-radius: 20px;
+          background: #F1F3F2;
+          border: 2px solid  rgb(255, 196, 247);
+          overflow:scroll;
+          text-overflow: ellipsis;
+
+
+
+          .type-cource{
+            font-weight: 400;
+            color: var(--text-primary, #181B32);
+            text-align: center;
+            font-size: 25px;
+                     }
+          .aboutCource{
+            padding: 14px;
+            font-size:16px;
+            font-weight:300;
+            line-height: 1.2;
+          }
+        }
+      }
+    }
+    
+    
+    .lastSection{
+      @include paddingTandB;
+      .aboutMe{
+        margin: 50px 0 0 100px;
+        color: var(--text-primary, #181B32);
+        font-size: 38px;
+        font-family: $Axiforma;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 130%;
+      }
+      .blockAboutMe{
+        display: flex;
+        justify-content: space-around;
+        @include  paddingTandB;
+        width: 75%;
+        @include center;
+        .imgAboutme{
+          width: 200px; 
+          height: 200px; 
+          border-radius: 60px;
+          background-color: rgb(250, 235, 241);
+        };
+        .rightBlockResume{
+          margin-left: 70px;
+        }
+        .textName{
+          color: var(--text-primary, #181B32);
+          font-size: 32px;
+          font-family: $Axiforma;
+font-style: normal;
+font-weight: 700;
+line-height: 36px;
+        }
+        .skills{
+          font-style: 25px;
+          font-weight: 500;
+        }
+
+      }
+    }
+    
+    
+    
+    
+
+    
+    /* Подвал */
+    
+    footer {
+      height: 80px;
+      background-color: #cce5ff;
+      padding: 20px;
+      .footer-text{
+        position: absolute;
+        left: 25%;
+}
+      .block-socmedia{
+        display: flex;
+        justify-content: end;
+        margin-right: 50px;
+      }
+      .icon{
+        width: 50px;
+      }
+    }
+
+  }

@@ -4,57 +4,81 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Online English School</title>
-  <link rel="stylesheet" href="./style.css">
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-  <header>
-    <h1>Easy study</h1>
-    <nav class="navHeader">
-      <ul class="links">
-        <li><a href="#">Домой</a></li>
-        <li><a href="#">Услуги</a></li>
-        <li><a href="#">Обо мне</a></li>
-        <li><a href="#">Контакты</a></li>
-      </ul>
-     </nav>
-     <div class="rightLinks">
-      <p class="registration">Регистрация</p>
-      <p class="signIn">Войти</p>
-    </div>
-  </header>
-
-  <main>
-    <section class="section">
-      <div class="blockOne"> <h2 class="titleWelcome">Добро пожаловать в нашу онлайн-школу английского языка</h2>
-        <p class="subTitle">Изучайте английский, не выходя из собственного дома комфортно</p>
-        <a  href="#" class="buttonTestLesson">Запись на пробный урок</a></div>
-     
-      <div class="blockTwo"><img class="photo" src="./assets/teacher.png" alt=""></div>
-    </section>
-
-    <section class="sectionSecond">
-      <h2 class="titleCources">Наши курсы</h2>
-      <ul class="cources" >
-        <li class="cource">Базовый <p class="aboutCource"></p></li>
-        <li class="cource">Оптимальный <p class="aboutCource"></p></li>
-        <li class="cource">Премиум <p class="aboutCource"></p></li>
-      </ul>
-    </section>
-
-    <section class="lastSection">
-      <h2>Обо мне</h2>
-      <div class="titleAboutMe">
-        <img src="./assets/teacher.png" alt="Teacher">
-        <div>
-          <h3>Арай Нурулаева</h3>
-          <p>Experienced English teacher with a passion for teaching and helping students succeed.</p>
+  <div id="container">
+    <header>
+      <h1>Easy study</h1>
+      <nav class="navHeader">
+        <ul class="links">
+          <li><a href="#">Домой</a></li>
+          <li><a href="#">Услуги</a></li>
+          <li><a href="#">Обо мне</a></li>
+          <li><a href="#">Контакты</a></li>
+        </ul>
+       </nav>
+       <div class="rightLinks">
+        <p class="signIn">Войти</p>
+      </div>
+    </header>
+  
+    <main>
+      <section class="section">
+        <div class="underSect">
+          <div class="blockOne"> <h2 class="titleWelcome"><div class="welcomeText"">Добро пожаловать</div> в нашу онлайн-школу английского языка</h2>
+          <p class="subTitle">Изучайте английский, не выходя из собственного дома комфортно</p>
+          <a  href="#" class="buttonTestLesson">Запись на пробный урок</a></div>
+       
+        <div class="blockTwo"><img class="photo" src="./assets/teacher.png" alt=""></div>
         </div>
+       
+      </section>
+  
+      <section class="sectionSecond">
+        <h2 class="title-cources">Наши курсы</h2>
+        <ul class="cources" >
+          <li class="cource"> <p class="type-cource">Базовый</p><p class="aboutCource">Добро пожаловать на курс для начинающих! Этот уникальный курс предназначен специально для тех, кто только начинает свой путь в выбранной области. Во время обучения вы освоите основные принципы и навыки, необходимые для достижения успеха в данной сфере. Наша команда опытных преподавателей с радостью поделится своими знаниями и опытом с вами, помогая вам справиться с любыми трудностями, с которыми вы можете столкнуться. В течение курса вы будете активно участвовать в практических заданиях, что поможет вам закрепить полученную информацию и развить свои навыки. Мы уверены, что после завершения этого курса вы будете готовы применять свои знания на практике и добиваться великих результатов.</p></li>
+          <li class="cource"><p class="type-cource">Оптимальный</p> <p class="aboutCource">Добро пожаловать на курс для начинающих! Этот уникальный курс предназначен специально для тех, кто только начинает свой путь в выбранной области. Во время обучения вы освоите основные принципы и навыки, необходимые для достижения успеха в данной сфере. Наша команда опытных преподавателей с радостью поделится своими знаниями и опытом с вами, помогая вам справиться с любыми трудностями, с которыми вы можете столкнуться. В течение курса вы будете активно участвовать в практических заданиях, что поможет вам закрепить полученную информацию и развить свои навыки. Мы уверены, что после завершения этого курса вы будете готовы применять свои знания на практике и добиваться великих результатов.</p></li>
+          <li class="cource"><p class="type-cource">Премиум</p> <p class="aboutCource">Добро пожаловать на курс для начинающих! Этот уникальный курс предназначен специально для тех, кто только начинает свой путь в выбранной области. Во время обучения вы освоите основные принципы и навыки, необходимые для достижения успеха в данной сфере. Наша команда опытных преподавателей с радостью поделится своими знаниями и опытом с вами, помогая вам справиться с любыми трудностями, с которыми вы можете столкнуться. В течение курса вы будете активно участвовать в практических заданиях, что поможет вам закрепить полученную информацию и развить свои навыки. Мы уверены, что после завершения этого курса вы будете готовы применять свои знания на практике и добиваться великих результатов.</p></li>
+        </ul>
+      </section>
+  
+      <section class="lastSection">
+        <h2 class="aboutMe">Обо мне</h2>
+        <div class="blockAboutMe">
+          <img class="imgAboutme" src="./assets/teacher.png" alt="Профильная фотография">
+          <div class="rightBlockResume">
+            <h3 class ="textName">Арай Нурулаева</h3>
+            <div class="experience skills">Опыт работы:<p>8 лет ...</p></div>
+            <div class="certificates skills">Сертификаты:<p>IELTS,CAMBRIDGE,...</p> </div>
+            <div class="education skills">Образование:<p>Высшее ...</p></div>
+            <div class="sometextAboutme skills">Обо мне: <p>Твоя нежность и забота о других просто непревзойденные. Ты умеешь слушать и понимать, и твоя доброта не имеет границ.Ты моя опора, мой лучший друг и моя большая любовь.</p></div>
           </div>
-    </section>
-  </main>
+            </div>
+      </section>
 
-  <footer>
-    <p>&copy; 2023 Online English School. All rights reserved.</p>
-  </footer>
+    </main>
+  
+
+    <footer>
+      <p class="footer-text">&copy; 2023 Online English School. All rights reserved.</p>
+
+      <div class="block-socmedia">
+        <a href="#" target="_blank">
+          <span class="icon">
+            <img class="icon" src="./assets/facebook.svg" alt="facebook">
+          </span>
+        </a>
+        <a href="#" target="_blank">
+          <span class="icon">
+            <img class="icon" src="./assets/instagram.svg" alt="instagramm">
+          </span>
+        </a>
+      </div>
+
+    </footer>
+  </div>
 </body>
 </html>

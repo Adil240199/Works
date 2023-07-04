@@ -1,0 +1,379 @@
+@charset "UTF-8";
+@media only screen and (min-width: 391px) {
+  @font-face {
+    font-family: "axiforma", sans-serif;
+    src: url("/school-engish/fonts//FontsFree-Net-sddd4.ttf") format("ttf");
+  }
+  /* Указываем box sizing */
+  *,
+  *::before,
+  *::after {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  /* Убираем внутренние отступы */
+  ul[class],
+  ol[class] {
+    padding: 0;
+  }
+  /* Убираем внешние отступы */
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  ul[class],
+  ol[class],
+  li,
+  figure,
+  figcaption,
+  blockquote,
+  dl,
+  dd {
+    margin: 0;
+  }
+  /* Выставляем основные настройки по-умолчанию для body */
+  body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+  }
+  /* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+  ul[class],
+  ol[class] {
+    list-style: none;
+  }
+  /* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+  a:not([class]) {
+    -webkit-text-decoration-skip: ink;
+            text-decoration-skip-ink: auto;
+  }
+  /* Упрощаем работу с изображениями */
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  /* Указываем понятную периодичность в потоке данных у article*/
+  article > * + * {
+    margin-top: 1em;
+  }
+  /* Наследуем шрифты для инпутов и кнопок */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+  /* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+  /* Подвал */
+}
+@media only screen and (min-width: 391px) and (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media only screen and (min-width: 391px) {
+  * {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 0px;
+    margin: 0 px;
+    scroll-behavior: smooth;
+    text-decoration: none;
+    font-family: "Axiforma", sans-serif;
+  }
+  body {
+    width: 100%;
+    height: auto;
+  }
+  #container {
+    max-width: 1440px;
+    height: auto;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  header {
+    width: 100%;
+    background: var(--secondary, #FFF5F1);
+    padding: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 0px;
+  }
+  h1 {
+    font-family: "Axiforma", sans-serif;
+    min-width: -webkit-max-content;
+    min-width: -moz-max-content;
+    min-width: max-content;
+    color: var(--text-primary, #181B32);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+    margin-right: 65px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .navHeader {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .navHeader .links {
+    width: 60%;
+    margin-top: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 24px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: var(--body-text, #666680);
+    font-size: 14px;
+    font-family: "Axiforma", sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px;
+  }
+  .rightLinks {
+    width: 148px;
+    height: auto;
+    padding: 5px;
+    border-radius: 73px;
+    background: var(--background-white, #FFF);
+  }
+  .signIn {
+    cursor: pointer;
+    text-align: center;
+    color: var(--primary-200, #524FD5);
+    font-family: "Axiforma", sans-serif;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+  }
+  main {
+    margin-top: -1px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .section {
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    -webkit-box-shadow: 0px 3px 3px rgba(20, 13, 111, 0.5);
+            box-shadow: 0px 3px 3px rgba(20, 13, 111, 0.5);
+    background: var(--secondary, #FFF5F1);
+  }
+  .section .underSect {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
+  .section .underSect .titleWelcome {
+    margin-top: 40px;
+    display: block;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    color: #181B32;
+    font-size: 26px;
+    font-family: Axiforma;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 126%;
+    font-family: "Axiforma", sans-serif;
+  }
+  .section .underSect .titleWelcome .welcomeText {
+    color: #181B32;
+    font-size: 26px;
+    font-family: Axiforma;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 126%;
+    font-family: "Axiforma", sans-serif;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  .section .underSect .subTitle {
+    margin-top: 18px;
+    color: var(--body-text, #666680);
+    font-size: 18px;
+    font-family: "Axiforma", sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 190%;
+    text-align: center;
+  }
+  .section .underSect .buttonTestLesson {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    margin-top: 30px;
+    padding: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+    border-radius: 73px;
+    background: var(--primary-200, #524FD5);
+    font-size: 18px;
+    font-family: "Axiforma", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .section .underSect .buttonTestLesson:hover {
+    text-decoration: none;
+    background-color: rgb(186, 159, 176);
+    color: rgb(255, 255, 255);
+  }
+  .section .underSect .photo {
+    width: 290px;
+    height: auto;
+    margin-left: -100px;
+  }
+  .sectionSecond {
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .sectionSecond .title-cources {
+    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--text-primary, #181B32);
+    font-size: 48px;
+    font-family: "Axiforma", sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 130%;
+  }
+  .sectionSecond .cources {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .sectionSecond .cources .cource {
+    height: 391px;
+    width: 268px;
+    border-radius: 20px;
+    background: #F1F3F2;
+    border: 2px solid rgb(255, 196, 247);
+    overflow: scroll;
+    text-overflow: ellipsis;
+  }
+  .sectionSecond .cources .cource .type-cource {
+    font-weight: 400;
+    color: var(--text-primary, #181B32);
+    text-align: center;
+    font-size: 25px;
+  }
+  .sectionSecond .cources .cource .aboutCource {
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.2;
+  }
+  .lastSection {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .lastSection .aboutMe {
+    margin: 50px 0 0 100px;
+    color: var(--text-primary, #181B32);
+    font-size: 38px;
+    font-family: "Axiforma", sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 130%;
+  }
+  .lastSection .blockAboutMe {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .lastSection .blockAboutMe .imgAboutme {
+    width: 200px;
+    height: 200px;
+    border-radius: 60px;
+    background-color: rgb(250, 235, 241);
+  }
+  .lastSection .blockAboutMe .rightBlockResume {
+    margin-left: 70px;
+  }
+  .lastSection .blockAboutMe .textName {
+    color: var(--text-primary, #181B32);
+    font-size: 32px;
+    font-family: "Axiforma", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 36px;
+  }
+  .lastSection .blockAboutMe .skills {
+    font-style: 25px;
+    font-weight: 500;
+  }
+  footer {
+    height: 80px;
+    background-color: #cce5ff;
+    padding: 20px;
+  }
+  footer .footer-text {
+    position: absolute;
+    left: 25%;
+  }
+  footer .block-socmedia {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+    margin-right: 50px;
+  }
+  footer .icon {
+    width: 50px;
+  }
+}
