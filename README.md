@@ -10,3 +10,5 @@
 Проект English-school https://adil240199.github.io/Works/School-engish/
 
 Проект Cv-Html https://adil240199.github.io/Works/cv-html/
+
+Проект Online-zoo https://adil240199.github.io/Works/online-zoo/pages/main/
