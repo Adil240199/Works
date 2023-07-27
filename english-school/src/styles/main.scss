@@ -1,0 +1,198 @@
+@import 'fonts';
+@import 'variables';
+@import 'mixin';
+@import 'resetStyles';
+
+@media only screen and (min-width:1001px) {
+main {
+    margin-top: 30px;
+    max-width: 1440px;
+    @include center;
+    padding-bottom: 50px;
+    flex: 1 0 auto;
+    }
+
+    .section{
+      width: 100%;
+      height: auto;
+      max-width: 1440px;
+      margin-top: 40px;
+      @include center;
+      @include paddingTandB;
+    };
+    
+      .underSect{
+        margin-top: 20px;
+        display: flex;
+        justify-content:space-between;
+        @include center;
+        width: 80%;
+        .titleWelcome{
+          color: #91BFCC;
+          margin-top: 40px;
+          display: block;
+          width: max-content;
+          @include center;
+          font-family: 'Montserrat',sans-serif;
+          @include main-text;
+        };
+        .welcomeText{
+          color: #91BFCC;
+          @include main-text;
+          font-family: 'Mak';
+          text-align: center;
+          margin-bottom: 5px;
+          font-family: 'Mak';
+          @include main-text;
+        }
+        .subTitle{
+          color: #48808F;
+          margin-top: 18px;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 190%;
+          text-align: center;
+        };
+        .buttonTestLesson{
+          width: max-content;
+          margin-top: 30px;
+          padding: 10px;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          color: #fff;
+          border-radius: 73px;
+          background: #48808F; 
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        };
+        .buttonTestLesson:hover{
+          text-decoration: none;
+           background-color: rgb(186, 159, 176);
+           color: rgb(255, 255, 255);
+         };
+    
+        
+        .photo{
+          width: 290px;
+          height: auto;
+          margin-left: -50px;
+        
+        };
+        };
+   
+    .title-courses{
+      margin-top: 50px;
+      text-align: center;
+      margin-bottom: 15px;
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 130%;
+    };
+
+    .sectionSecond{
+      width: 100%;
+      @include paddingTandB;
+      width: 90%;
+      @include center;
+      display: flex;
+      justify-content: space-around;
+        width: 85%;
+        @include center;
+        display: flex;
+        justify-content: space-around;
+    }
+        .course{
+          background: rgba(230, 230, 250, 0.5);
+          height: 391px;
+          width: 268px;
+          border-radius: 50px;
+          border: 2px solid  rgb(255, 196, 247);
+          overflow:hidden;
+          text-overflow: ellipsis;
+        }
+          .top_feed{
+            display: flex;
+            margin-left: 16px;
+            margin-top: 15px;
+           }
+           .h7{
+            color:rgba(0, 0, 0, 1);
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 120%;
+           }
+           .text_feed{
+            color: #BDBDBD;
+            font-family:'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 15px;
+            line-height: 120%;
+           }
+           .head_feed{
+            margin-left: 10px;
+           }
+           .text{
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+            height: 309px;
+            width: 237px;
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 18px;
+        letter-spacing: 0em;
+        text-align: left;
+        font-family:'Roboto', sans-serif;
+        color: rgba(118, 116, 116, 1);
+           }
+
+        
+      
+    
+    
+    
+    .lastSection{
+      @include paddingTandB;
+      .aboutMe{
+        margin: 50px 0 0 100px;
+        color: var(--text-primary, #181B32);
+        font-size: 38px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 130%;
+      }
+      .blockAboutMe{
+        display: flex;
+        justify-content: space-around;
+        @include  paddingTandB;
+        width: 75%;
+        @include center;
+        .imgAboutme{
+          width: 200px; 
+          height: 200px; 
+          border-radius: 60px;
+          background-color: rgb(250, 235, 241);
+        };
+        .rightBlockResume{
+          margin-left: 70px;
+        }
+        .textName{
+          color: var(--text-primary, #181B32);
+          font-size: 32px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 36px;
+        }
+        .skills{
+          font-style: 27px;
+          font-weight: 500;
+        }
+
+      }
+    }
+}

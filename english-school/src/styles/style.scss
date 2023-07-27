@@ -1,0 +1,29 @@
+@import 'fonts';
+@import 'variables';
+@import 'mixin';
+@import 'resetStyles';
+@media only screen and (min-width:1001px) {
+   
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    scroll-behavior: smooth;
+    text-decoration: none;
+    font-family:  "Montserrat" , sans-serif;
+  }
+
+  body {
+      width: 100%;
+      max-width: 100%;
+     position: relative;
+  }
+  .container{
+    display: flex;
+  flex-direction: column;
+  height: 100%;
+  }
+    
+    }

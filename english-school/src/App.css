@@ -111,6 +111,7 @@ select {
   }
   body {
     width: 100%;
+    max-width: 100%;
     position: relative;
   }
   header {
@@ -317,7 +318,7 @@ select {
     display: flex;
     justify-content: space-around;
   }
-  .sectionSecond .cource {
+  .cource {
     background: rgba(230, 230, 250, 0.5);
     height: 391px;
     width: 268px;
@@ -326,30 +327,30 @@ select {
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  .sectionSecond .cource .top_feed {
+  .top_feed {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     margin-left: 16px;
     margin-top: 15px;
   }
-  .sectionSecond .cource .h7 {
+  .h7 {
     color: rgb(0, 0, 0);
     font-weight: 400;
     font-size: 16px;
     line-height: 120%;
   }
-  .sectionSecond .cource .text_feed {
+  .text_feed {
     color: #BDBDBD;
     font-family: "Roboto", sans-serif;
     font-weight: 300;
     font-size: 15px;
     line-height: 120%;
   }
-  .sectionSecond .cource .head_feed {
+  .head_feed {
     margin-left: 10px;
   }
-  .sectionSecond .cource .text {
+  .text {
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
@@ -404,10 +405,9 @@ select {
     line-height: 36px;
   }
   .lastSection .blockAboutMe .skills {
-    font-style: 25px;
+    font-style: 27px;
     font-weight: 500;
   }
-  /* Подвал */
   footer {
     margin-top: 100px;
     width: 100%;
