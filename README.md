@@ -7,7 +7,7 @@
 
 Проект Virtual-keyboard https://adil240199.github.io/Works/virtual-keyboard/ 
 
-Проект English-school https://adil240199.github.io/Works/School-engish/
+Проект English-school https://adil240199.github.io/Works/School-engish/   https://adil240199.github.io/Works/english-school/public/
 
 Проект Cv-Html https://adil240199.github.io/Works/cv-html/
 
