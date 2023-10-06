@@ -1,0 +1,51 @@
+@import "../../styles/fonts";
+@import "../../styles/variables";
+@import "../../styles/mixin";
+@import "../../styles/resetStyles";
+
+.lastSection {
+    @include paddingTandB;
+   
+    .blockAboutMe {
+      display: flex;
+      @include paddingTandB;
+      width: 75%;
+      @include center;
+      color: black;
+    }
+      .imgAboutme {
+        width: 200px;
+        height: 200px;
+        border-radius: 60px;
+        background-color: rgb(250, 235, 241);
+      }
+
+      .rightBlockResume {
+        margin-left: 50px;
+        white-space: pre-wrap;
+        width: 700px;
+      }
+      .textName {
+        color: var(--text-primary, #181b32);
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 36px;
+        text-align: left;
+      }
+      .skills {
+        display: flex;
+        flex-wrap: wrap ;
+        color: black;
+        font-style: 25px;
+        font-weight: 500;
+        word-wrap: break-word;
+
+      }
+      .experience{
+        margin-top: 10px;
+      }
+    
+    }
+
+

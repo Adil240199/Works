@@ -1,0 +1,52 @@
+@import "../../styles/fonts";
+@import "../../styles/variables";
+@import "../../styles/mixin";
+@import "../../styles/resetStyles";
+.main {
+  height: 800px;
+  margin-top: 0px;
+  border-radius: 50px;
+  @include center;
+  min-width: max-content;
+}
+h3 {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.742);
+}
+.top_section {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+  @include center;
+  .add_student {
+    height: 30px;
+    display: block;
+    width: 150px;
+    padding: 5px;
+    background-color: #2491e0;
+    color: #fff;
+    border-radius: 5px;
+  }
+  .texArea {
+    height: 30px;
+    width: 150px;
+    border: solid 1px #2491e0;
+    border-radius: 5px;
+    color: rgba(0, 0, 0, 0.742);
+    padding: 5px;
+  }
+}
+.students {
+  margin-top: 30px;
+  padding: 40px 0 40px 0;
+  background: #bce4fc;
+  border-radius: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  min-width: max-content;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+}

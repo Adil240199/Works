@@ -1,10 +1,9 @@
-@import 'fonts';
-@import 'variables';
-@import 'mixin';
-@import 'resetStyles';
-@media only screen and (min-width:1001px) {
-   
-*{
+@import "fonts";
+@import "variables";
+@import "mixin";
+@import "resetStyles";
+
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -12,18 +11,36 @@
     margin: 0px;
     scroll-behavior: smooth;
     text-decoration: none;
-    font-family:  "Montserrat" , sans-serif;
+    font-family: "Montserrat", sans-serif;
   }
 
   body {
-      width: 100%;
-      max-width: 100%;
-     position: relative;
+    position: relative;
+    height: auto;
+    @media (max-width: 1000px) {
+      width: 1000px;
+      min-width: 100%;
+    }
+  }
+  .app_wrapper_name{
+    @media (max-width: 1000px) {
+      width: 1000px;
+      min-width: 100%;
+      @include center;
+    }
+  }
+  #root{
+    @media (max-width: 1000px) {
+      width: 1000px;
+      min-width: 100%;
+      @include center;
+    }
   }
   .container{
-    display: flex;
-  flex-direction: column;
-  height: 100%;
-  }
-    
+    @media (max-width: 1000px) {
+      width: 1000px;
+      min-width: 100%;
+      @include center;
     }
+  }
+

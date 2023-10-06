@@ -1,0 +1,46 @@
+@import '../../../styles/fonts';
+@import '../../../styles/variables';
+@import '../../../styles/mixin';
+@import '../../../styles/resetStyles';
+
+// @media screen and (min-width: 1000px) {
+.language_Block{
+    height: 40px;
+    margin-left: 5px;
+    margin-right: 15px;
+    padding-top: 5px;
+    @media (max-width: 640px) {
+     margin-left: auto;
+     padding-top: 5px;
+     margin-right: 10px;
+
+}
+.languageChose{
+    margin-bottom: 5px;
+b,span{
+    color: black;
+    font-size: 15px;
+    margin-left: 3px;
+}
+span{
+    border-bottom: 2px #000088 dashed;
+}
+}
+.languagePopup{
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    @media (max-width: 640px) {
+    }
+    ul{
+        list-style: none;
+        .active{
+            color: #000088;
+        }
+        li{
+            color: black;
+        }
+    }
+}
+
+}

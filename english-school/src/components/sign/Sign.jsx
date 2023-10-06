@@ -1,9 +1,10 @@
 import React from 'react';
-import '../styles/sign.scss';
+import './sign.scss';
 
 const Sign = () => {
    return (
-        <div className="container_sign">
+      <div className='blockSign'>
+           <div className="container_sign">
           <h1>Log in to your account</h1>
           <div className="facebook_link">
             <img className="facebook_svg" src="#" alt="facebook" />
@@ -24,11 +25,10 @@ const Sign = () => {
             <p><input className="submit" type="submit" value="Sign In" /></p>
           </form>
           <a href="#" className="forgot_psw">Forgot Your Password?</a>
-          <span className="big_line"></span>
           <p className="regis">Don&#8217;t have an account?<a href="#" className="regis_link">Register</a></p>
         </div>
-    
-      );
+      </div>
+       );
     };
     
 
