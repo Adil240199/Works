@@ -11,7 +11,9 @@
     margin: 0px;
     scroll-behavior: smooth;
     text-decoration: none;
-    font-family: "Montserrat", sans-serif;
+    font-family: "SinaNova";
+    transition: 0.4s;
+
   }
 
   body {
@@ -21,6 +23,9 @@
       width: 1000px;
       min-width: 100%;
     }
+    @media (max-width: 480px) {
+      width: 480px;
+    }
   }
   .app_wrapper_name{
     @media (max-width: 1000px) {
@@ -28,6 +33,10 @@
       min-width: 100%;
       @include center;
     }
+    @media (max-width: 480px) {
+      width: 480px;
+    }
+    
   }
   #root{
     @media (max-width: 1000px) {
@@ -35,12 +44,18 @@
       min-width: 100%;
       @include center;
     }
+    @media (max-width: 480px) {
+      width: 480px;
+    }
   }
   .container{
     @media (max-width: 1000px) {
       width: 1000px;
       min-width: 100%;
       @include center;
+    }
+    @media (max-width: 480px) {
+      width: 480px;
     }
   }
 

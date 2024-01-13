@@ -1,4 +1,3 @@
-
 @import "../../styles/fonts";
 @import "../../styles/variables";
 @import "../../styles/mixin";
@@ -10,8 +9,11 @@
     padding-bottom: 10px;
     position: relative;
     @include center;
-
+   display: none;
 }
+.openMenu{
+    display: block;
+  }
 .container_sign {
     width: 100%;
     height: auto;

@@ -6,14 +6,6 @@ const Sign = () => {
       <div className='blockSign'>
            <div className="container_sign">
           <h1>Log in to your account</h1>
-          <div className="facebook_link">
-            <img className="facebook_svg" src="#" alt="facebook" />
-            <a className="text_facebook" href="#">Sign In with Facebook</a>
-          </div>
-          <div className="google_link">
-            <img className="google_svg" src="#" alt="google" />
-            <a className="text_google" href="#">Sign In with Google</a>
-          </div>
           <div className="lines">
             <span className="line"></span>
             <p className="some_text">or</p>

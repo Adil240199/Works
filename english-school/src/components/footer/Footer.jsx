@@ -3,7 +3,7 @@ import './footer.scss';
 
 const Footer = () => {
    return (
-      <footer>
+      <footer id='idFooter'>
           <div className="block-socmedia">
             <p className="footer-text">&copy; 2023 Online English School. All rights reserved.</p>
             <div className="soc-media">

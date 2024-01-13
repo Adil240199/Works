@@ -1,51 +1,33 @@
-// import React from "react";
-// import ReactDOM from "react-dom/client";
-// import reportWebVitals from "./reportWebVitals";
-// import App from "./App";
-// import state, { subscribe } from "./redux/state";
-// import { addStudent, updateNewTextStudent } from "./redux/state";
-
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-// let rerenderEntireTree = (state) => {
-//   root.render(
-//     <React.StrictMode>
-//       <App
-//         state={state}
-//         addStudent={addStudent}
-//         updateNewTextStudent={updateNewTextStudent}
-//       />
-//     </React.StrictMode>
-//   );
-// };
-// // rerenderEntireTree();
-// rerenderEntireTree(state);
-// subscribe(rerenderEntireTree);
-
-// reportWebVitals();
-
-
-
-
-
-
 import React from "react";
+import store from "./redux/redux-store"
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 import App from "./App";
-import store from "./redux/state";
+import { Provider } from "react-redux";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-
-let rerenderEntireTree = (state) => {
- root.render(
+// let rerenderEntireTree = (state) => {
+  root.render(
     <React.StrictMode>
-      <App state={state} addStudent={store.addStudent.bind(store)} 
-           updateNewTextStudent={store.updateNewTextStudent.bind(store)}/>
+       <Provider store={store}>
+      <App/>
+      </Provider>
     </React.StrictMode>
   );
-};
-// rerenderEntireTree();
-rerenderEntireTree(store.getState());
-store.subscribe(rerenderEntireTree);
+// };
+
+// rerenderEntireTree(store.getState());
+
+
+
+
+
+
+
+
+
+
+
 
 reportWebVitals();

@@ -2,6 +2,7 @@ import React from 'react';
 import  review from "./Review.module.scss"
 const Review = () => {
   return (
+    <div className={review.mainBlockReview}>
      <div className={review.blockReview}>
       <h5 className={review.h5_tablet}>Отзывы</h5>
       <div className={review.Testimonials}>
@@ -64,7 +65,7 @@ const Review = () => {
       {/* <progress class="line" value="23" max="100"></progress> */}
       <button className={review.feedback}>Оставить отзыв</button>
     </div>
-  
+  </div>
     );
   
 };

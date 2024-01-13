@@ -16,22 +16,34 @@ const Message = (props) => {
 };
 
 const Personality = (props) => {
-  let dialogElements = props.state.dialogs.map((d) => (
-    <DialogItem className={p.dialog} name={d.name} id={d.id} />
+  let stateDialogs = props.stateDialogs;
+  let stateMessages = props.stateMessages;
+
+  let dialogElements = stateDialogs.dialogs.map((d) => (
+    <DialogItem className={p.dialog} name={d.name}  />
   ));
-  let messagesElements = props.state.messages.map((m) => (
-    <Message className={p.message} message={m.message} />
+  let messagesElements = stateMessages.messages.map((m) => (
+    <Message className={p.message} message={m.message}  />
   ));
+  let newMessageBody = stateMessages.newMessageBody;
 
   let newStudentElement = React.createRef();
 
-  let addStudient = () => {
-    props.addStudent();
+  let onAddStudient = () => {
+    props.addStudient();
   };
 
   let onStudentChange = () => {
     let text = newStudentElement.current.value;
-    props.updateNewTextStudent(text);
+    props.updateNewStudentText(text);
+  };
+
+  let onSendMessageClick = () => {
+    props.sendMessage();
+  };
+  let onNewMessageChange = (e) => {
+    let body = e.target.value;
+    props.updateNewMessageBodyCreator(body);
   };
 
   return (
@@ -39,22 +51,41 @@ const Personality = (props) => {
       <Resume />
 
       <h3>Ученики</h3>
+
       <div className={p.top_section}>
-        <button onClick={addStudient} className={p.add_student}>
+        <button onClick={onAddStudient} className={p.add_student}>
           Добавить ученика
         </button>
         <textarea
           onChange={onStudentChange}
           ref={newStudentElement}
           className={p.texArea}
-          value={props.state.newStutentPerson}
+          value={stateDialogs.newStutentPerson}
         />
       </div>
-
+      <div className={p.bground}>
       <div className={p.students}>
         <div className={p.dialogs}>{dialogElements}</div>
-        <div className={p.messages}>{messagesElements}</div>
+
+        <div className={p.messages}>
+          <div>{messagesElements} </div>
+          <div>
+            <div>
+              <textarea
+                className={p.texArea}
+                value={newMessageBody}
+                onChange={onNewMessageChange}
+                placeholder="Enter your message"
+              ></textarea>
+            </div>
+            <div>
+              <button className={p.sendMessage} onClick={onSendMessageClick}>Send</button>
+            </div>
+          </div>
+        </div>
       </div>
+      </div>
+    
     </div>
   );
 };

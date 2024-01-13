@@ -21,6 +21,9 @@ b,span{
     color: black;
     font-size: 15px;
     margin-left: 3px;
+    @media (max-width: 640px) {
+        font-size: 12px;
+    }
 }
 span{
     border-bottom: 2px #000088 dashed;
