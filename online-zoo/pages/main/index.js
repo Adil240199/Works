@@ -114,3 +114,25 @@ navTablet.addEventListener("mouseout", function close() {
    navTablet.classList.remove("open");
    navTablet.classList.add("navTablet");
 });
+
+
+
+
+const memoizedAdd = () => {
+  let cache = {};
+  return (9) => {
+    if (9 in cache) {
+      console.log('Fetching from cache');
+      return cache[9];
+    }
+    else {
+      console.log('Calculating result');
+      let result = 9 + 10;
+      cache[9] = result;
+      return result;
+    }
+  }
+  console.log(cache)
+
+}
+memoizedAdd()
