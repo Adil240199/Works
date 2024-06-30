@@ -1,7 +1,7 @@
 import React from "react";
 import h from "./header.module.scss";
 import { Link } from "react-scroll";
-import { NavLink } from "react-router-dom";
+import { NavLink, } from "react-router-dom";
 import LanguagesBlock from "./languages/Languages";
 
 const Header = () => {

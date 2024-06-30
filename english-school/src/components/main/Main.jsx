@@ -59,7 +59,7 @@ const Main = () => {
 
       <div className="privilege">
         <figure className="imgPrivilege">
-          <img src="images/time.svg" alt="time" />
+          <img src="/images/time.svg" alt="time" />
           <figcaption>Гибкий график</figcaption>
         </figure>
         <figure className="imgPrivilege">
@@ -69,7 +69,7 @@ const Main = () => {
           </figcaption>
         </figure>
         <figure className="imgPrivilege">
-          <img src="images/person.svg" alt="time" />
+          <img src="/images/person.svg" alt="time" />
           <figcaption>
             Персонализированный <br /> подход
           </figcaption>
@@ -84,7 +84,7 @@ const Main = () => {
        <div className="sectionSecond">
         <div className={"course"+' '+"courceElementary"}>
           <div className="top_feed">
-            {/* <img src="images/silver.svg" alt="user" /> */}
+            <img src="./images/silver.svg" alt="user" />
             <div className="head_feed">
               <p className="h7">Elementary</p>
               <p className="text_feed">Для начинающих · 100$</p>
@@ -104,7 +104,7 @@ const Main = () => {
         </div>
         <div className={"course"+' '+"courceIntermediate"}>
           <div className="top_feed">
-            {/* <img src="images/bronze.svg" alt="user" /> */}
+            <img src="images/bronze.svg" alt="user" />
             <div className="head_feed">
               <p className="h7">Pre-Intermediate</p>
               <p className="text_feed">Средний уровень · 100$</p>
@@ -124,7 +124,7 @@ const Main = () => {
         </div>
         <div className={"course"+' '+"courceUpper"}>
           <div className="top_feed">
-            {/* <img src="images/gold.svg" alt="user" /> */}
+            <img src="images/gold.svg" alt="user" />
             <div className="head_feed">
               <p className="h7">Upper-Intermediate</p>
               <p className="text_feed">Продвинутый · 100$</p>

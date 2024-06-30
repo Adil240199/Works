@@ -7,6 +7,7 @@ import Sign from "./components/sign/Sign";
 import { BrowserRouter, Route, Redirect } from "react-router-dom";
 import PersonalityContainer from "./components/personality/PersonalityContainer";
 import UsersContainer from "./components/Users/UsersContainer";
+import ProfileContainer from "./components/profile/profileContainer";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route exact path="/sign" render={() => <Sign />} />
           <Route exact path="/Personality" render={() => <PersonalityContainer/>}/>
           <Route exact path="/Users" render={() => <UsersContainer />} />
+          <Route exact path="/profile" render={() => <ProfileContainer />} />
 
        
           <Redirect from="/" to="/main" />
