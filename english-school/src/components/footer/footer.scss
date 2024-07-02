@@ -1,0 +1,38 @@
+@import "../../styles/fonts";
+@import "../../styles/variables";
+@import "../../styles/mixin";
+@import "../../styles/resetStyles";
+  footer {
+    width: 100%;
+    background-color: rgba(188, 228, 252, 0.8);
+    box-shadow: 0px 3px 3px rgba(83, 167, 216, 0.5);
+    position: absolute;
+    bottom: -70px;
+    padding: 15px;
+    @media (max-width: 1000px) {
+      max-width: 1000px;
+     }
+    .block-socmedia {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1440px;
+      @include center;
+      height: 100%;
+      align-items: center;
+      height: 40px;
+      @media (max-width: 1000px) {
+        max-width: 1000px;
+       }
+    }
+    .soc-media {
+      width: 100px;
+      height: 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .icon {
+      width: 50px;
+    }
+  }
+
