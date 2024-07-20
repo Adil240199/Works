@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/Works/static/css/main.acef8746.css",
-    "main.js": "/Works/static/js/main.b4d39371.js",
+    "main.css": "/Works/static/css/main.83870bba.css",
+    "main.js": "/Works/static/js/main.9a786955.js",
     "static/js/787.91645fcf.chunk.js": "/Works/static/js/787.91645fcf.chunk.js",
+    "static/media/teacher.jpg": "/Works/static/media/teacher.d39217c9b5563fd92b1b.jpg",
     "static/media/logo.png": "/Works/static/media/logo.2abc50917babdf148bbb.png",
     "static/media/Montserrat-VariableFont_wght.ttf": "/Works/static/media/Montserrat-VariableFont_wght.3068cdb43142f5625baf.ttf",
-    "static/media/teacher.png": "/Works/static/media/teacher.fa52b2bdda0b93049986.png",
     "static/media/MAK.ttf": "/Works/static/media/MAK.7db1eadce28a3261c4db.ttf",
     "static/media/airplane.jpg": "/Works/static/media/airplane.8ca25b5eac97e08a4007.jpg",
     "static/media/students.jpg": "/Works/static/media/students.7d9257ac0f58d39755e1.jpg",
@@ -22,12 +22,12 @@
     "static/media/growth.svg": "/Works/static/media/growth.4816fa1553fae781e10e83d3c5af3cec.svg",
     "index.html": "/Works/index.html",
     "static/media/facebook.svg": "/Works/static/media/facebook.6ce3043d0bdbaba203d84e896cfce7da.svg",
-    "main.acef8746.css.map": "/Works/static/css/main.acef8746.css.map",
-    "main.b4d39371.js.map": "/Works/static/js/main.b4d39371.js.map",
+    "main.83870bba.css.map": "/Works/static/css/main.83870bba.css.map",
+    "main.9a786955.js.map": "/Works/static/js/main.9a786955.js.map",
     "787.91645fcf.chunk.js.map": "/Works/static/js/787.91645fcf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.acef8746.css",
-    "static/js/main.b4d39371.js"
+    "static/css/main.83870bba.css",
+    "static/js/main.9a786955.js"
   ]
 }
