@@ -22,9 +22,7 @@ const Resume = (props) => {
           <div className={r.sometextAboutme +' '+r.skills}>
             Oбo мне:
             <p className={r.skills}>
-              Твоя нежность и забота o других просто непревзойденные. Ты умеешь
-              слушать и понимать, и твоя доброта не имеет границ. Ты моя опора,
-              мой лучший друг и моя большая любовь.
+              I have a background in English language and linguistics, and I’ve been actively teaching students of different ages and levels. My English proficiency is at a solid C1 level – I speak fluently, write clearly, and have a strong command of grammar, vocabulary, and pronunciation. I can help students from beginner (A1) to upper-intermediate (B2) levels improve their speaking, listening, reading, and writing skills.
             </p>
           </div>
         </div>
