@@ -1,17 +1,35 @@
 # English Course Platform (Test Project)
 
-This is a **test project** for an online English course platform built with **React**. It is **not intended for production use** and is currently **under development**.
+Welcome to a **demo project** for an online English course platform, built as a part of my learning journey with **React** and related technologies.
 
-The goal of this project is to practice and demonstrate the use of various modern frontend technologies and techniques, including:
+> ⚠️ **This is not a production-ready application.**  
+> It is a **test project**, still in development, and created for educational and practice purposes only.
 
-- **React** (functional components)
+---
+
+## Live Demo
+
+Check out the deployed version here:  
+**[https://adil240199.github.io/Works/](https://adil240199.github.io/Works/)**
+
+---
+
+## Features & Technologies Used
+
+- **React** (Functional components)
 - **React Hooks** (`useState`, `useEffect`, etc.)
 - **Redux** for state management
-- **SCSS** and CSS Modules for styling
-- **Reusable components**
-- Basic project structure and routing
+- **SCSS** & CSS Modules for styling
+- **Reusable UI components**
+- **Project structure with basic routing**
 
-> **Note:** This project does **not** use React Context API.  
-> It is purely a personal learning and experimental project.
+> **Note:** This project does **not** use the React Context API.
 
-Feel free to explore the code and structure, but keep in mind that this project is not complete and may contain placeholder content or unfinished features.
+---
+
+## Status
+
+This project is a **work in progress** and contains **incomplete features and placeholder content**.  
+It was created to experiment with and demonstrate modern frontend practices.
+
+Feel free to explore the code!
