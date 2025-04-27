@@ -9,18 +9,16 @@ import {
 import Personality from "./Personality";
 import { connect } from "react-redux";
 
-
-
 const mapStateToProps = (state) => {
-  return{
+  return {
     stateDialogs: state.studientsReducer,
     stateMessages: state.messagesReducer,
-    newStutentPerson : state.studientsReducer.newStutentPerson,
-  }
-}
+    newStutentPerson: state.studientsReducer.newStutentPerson,
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
-  return{
+  return {
     updateNewStudentText: (text) => {
       let action = onStudentChangeActionCreator(text);
       dispatch(action);
@@ -28,17 +26,18 @@ const mapDispatchToProps = (dispatch) => {
     addStudient: () => {
       dispatch(addStudientActionCreator());
     },
-     updateNewMessageBodyCreator: (body) => {
-      dispatch(updateNewMessageBodyCreator(body)); 
-     },
-     sendMessage: (body) => {
+    updateNewMessageBodyCreator: (body) => {
+      dispatch(updateNewMessageBodyCreator(body));
+    },
+    sendMessage: (body) => {
       dispatch(SendMessageCreator());
-     },
-  }
-}
+    },
+  };
+};
 
-const PersonalityContainer = connect (mapStateToProps,mapDispatchToProps) (Personality)
-
-
+const PersonalityContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Personality);
 
 export default PersonalityContainer;

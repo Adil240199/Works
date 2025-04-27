@@ -1,20 +1,18 @@
 import React from "react";
 import PreLoader from "../../common/preLoader/preloader";
 
-
 const ProfileInfo = (props) => {
-    if(!props.profile) {
-        <PreLoader />
-    }
+  if (!props.profile) {
+    <PreLoader />;
+  }
 
-    return (
-        <div>
-            <div className="descriptionBlock">
-              <img src={props.profile.photos.large} alt="ava" />
-            </div>
+  return (
+    <div>
+      <div className="descriptionBlock">
+        <img src={props.profile.photos.large} alt="ava" />
+      </div>
+    </div>
+  );
+};
 
-        </div>
-    )
-}
-
-export default ProfileInfo
+export default ProfileInfo;

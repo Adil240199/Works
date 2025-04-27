@@ -2,5 +2,4 @@ import React from "react";
 
 import Users from "./Users";
 
-
- export default UsersApiComponent;
+export default UsersApiComponent;

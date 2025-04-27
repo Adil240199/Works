@@ -1,73 +1,107 @@
-import React from 'react';
-import  review from "./Review.module.scss"
+import React, { useState } from "react";
+import review from "./Review.module.scss";
+import user from "../../images/user.png";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 const Review = () => {
+  const [currentSlide, setCurrentSlide] = useState(0); // Состояние для текущего слайда
+  const totalSlides = 4; // Количество отзывов
+
+  const settings = {
+    dots: true, // Показывать индикаторы
+    infinite: true, // Бесконечная прокрутка
+    speed: 500, // Скорость прокрутки
+    slidesToShow: 1, // Количество отображаемых слайдов
+    slidesToScroll: 1, // Количество прокручиваемых слайдов
+    beforeChange: (oldIndex, newIndex) => {
+      setCurrentSlide(newIndex); // Обновляем текущий слайд
+    },
+    responsive: [
+      {
+        breakpoint: 768, // Адаптация под мобильные устройства
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 1024, // Адаптация под планшеты
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+    ],
+  };
+
+  const progressWidth = ((currentSlide + 1) / totalSlides) * 100;
+
   return (
-    <div className={review.mainBlockReview}>
-     <div className={review.blockReview}>
-      <h5 className={review.h5_tablet}>Отзывы</h5>
-      <div className={review.Testimonials}>
-        <div className={review.Testimonial}>
-          <div className={review.top_feed}>
-            <img className={review.userImg}  src="images/user.png" alt="user" />
-            <div className={review.head_feed}>
-              <p className={review.h7}>Michael John</p>
-              <p className={review.text_feed}>Local Austria · Today</p>
+    <div className={review.mainBlockReview} id="review">
+      <div className={review.blockReview}>
+        <h5 className={review.h5_tablet}>Отзывы</h5>
+        <Slider {...settings} className={review.Testimonials}>
+          <div className={review.Testimonial}>
+            <div className={review.top_feed}>
+              <img className={review.userImg} src={user} alt="user" />
+              <div className={review.head_feed}>
+                <p className={review.h7}>Michael John</p>
+                <p className={review.text_feed}>Local Austria · Today</p>
+              </div>
             </div>
+            <p className={review.text}>
+              The best online zoo I’ve met. My son is delighted to watch
+              gorillas...
+            </p>
           </div>
-          <p className={review.text}>
-            The best online zoo I’ve met. My son delighted very much ljves to watch gouillas. Online zoo is one jf the ways to instill a love for animals.The best online 
-            <br /> The best online zoo I’ve met. My son delighted very much ljves to watch gouillas.
-          </p>
-        </div>
-        <div className={review.Testimonial+' '+review.Oscar}>
-          <div className={review.top_feed}>
-            <img className={review.userImg} src="images/user.png" alt="user" />
-            <div className={review.head_feed}>
-              <p className={review.h7}>Oskar Samborsky</p>
-              <p className={review.text_feed}>Local Austria · Yesterday</p>
+          <div className={review.Testimonial + " " + review.Oscar}>
+            <div className={review.top_feed}>
+              <img className={review.userImg} src={user} alt="user" />
+              <div className={review.head_feed}>
+                <p className={review.h7}>Oskar Samborsky</p>
+                <p className={review.text_feed}>Local Austria · Yesterday</p>
+              </div>
             </div>
+            <p className={review.text}>
+              The best online zoo I’ve met. My son loves watching gorillas...
+            </p>
           </div>
-          <p className={review.text}>
-            Online zoo is one jf the ways to instill a love for animals.The best online zoo I’ve met. 
-            <br /> The best online zoo I’ve met. My son delighted very much ljves to watch gouillas. Online zoo is one jf the ways to instill a love for animals.The best online zo
-          </p>
-        </div>
-        <div className={review.Testimonial}>
-          <div className={review.top_feed}>
-            <img className={review.userImg} src="images/user.png" alt="user" />
-            <div className={review.head_feed}>
-              <p className={review.h7}>Fredericka Michelin</p>
-              <p className={review.text_feed}>Local Austria · Yesterday</p>
+          <div className={review.Testimonial}>
+            <div className={review.top_feed}>
+              <img className={review.userImg} src={user} alt="user" />
+              <div className={review.head_feed}>
+                <p className={review.h7}>Fredericka Michelin</p>
+                <p className={review.text_feed}>Local Austria · Yesterday</p>
+              </div>
             </div>
+            <p className={review.text}>
+              The best online zoo I’ve met. My son loves to watch...
+            </p>
           </div>
-          <p className={review.text}>
-            The best online zoo I’ve met. My son delighted very much ljves to watch goui
-            <br /> The best online zoo I’ve met. My son delighted very much ljves to
-          </p>
-        </div>
-        <div className={review.Testimonial}>
-          <div className={review.top_feed}>
-            <img className={review.userImg} src="images/user.png" alt="user" />
-            <div className={review.head_feed}>
-              <p className={review.h7}>Mila Riksha</p>
-              <p className={review.text_feed}>Local Austria · Yesterday</p>
+          <div className={review.Testimonial}>
+            <div className={review.top_feed}>
+              <img className={review.userImg} src={user} alt="user" />
+              <div className={review.head_feed}>
+                <p className={review.h7}>Mila Riksha</p>
+                <p className={review.text_feed}>Local Austria · Yesterday</p>
+              </div>
             </div>
+            <p className={review.text}>
+              My son loves watching gorillas. Online zoo is a great way to...
+            </p>
           </div>
-          <p className={review.text}>
-            My son delighted very much ljves to watch gouillas. Online zoo is one jf the ways to instill a love for animals.The best onlin
-            The best online zoo I’ve met. My son delighted very much ljves to watch gouillas. Online zoo is one jf
-          </p>
+        </Slider>
+        <div
+          className={
+            review.progress_bar + " " + review.blue + " " + review.stripes
+          }
+        >
+          <span style={{ width: `${progressWidth}%` }}></span>
         </div>
+        <button className={review.feedback}>Оставить отзыв</button>
       </div>
-      <div className={review.progress_bar+' '+review.blue+' '+review.stripes}>
-        <span></span>
-      </div>
-      {/* <progress class="line" value="23" max="100"></progress> */}
-      <button className={review.feedback}>Оставить отзыв</button>
     </div>
-  </div>
-    );
-  
+  );
 };
 
 export default Review;

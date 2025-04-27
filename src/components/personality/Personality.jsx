@@ -20,10 +20,10 @@ const Personality = (props) => {
   let stateMessages = props.stateMessages;
 
   let dialogElements = stateDialogs.dialogs.map((d) => (
-    <DialogItem className={p.dialog} name={d.name}  />
+    <DialogItem className={p.dialog} name={d.name} />
   ));
   let messagesElements = stateMessages.messages.map((m) => (
-    <Message className={p.message} message={m.message}  />
+    <Message className={p.message} message={m.message} />
   ));
   let newMessageBody = stateMessages.newMessageBody;
 
@@ -64,28 +64,29 @@ const Personality = (props) => {
         />
       </div>
       <div className={p.bground}>
-      <div className={p.students}>
-        <div className={p.dialogs}>{dialogElements}</div>
+        <div className={p.students}>
+          <div className={p.dialogs}>{dialogElements}</div>
 
-        <div className={p.messages}>
-          <div>{messagesElements} </div>
-          <div>
+          <div className={p.messages}>
+            <div>{messagesElements} </div>
             <div>
-              <textarea
-                className={p.texArea}
-                value={newMessageBody}
-                onChange={onNewMessageChange}
-                placeholder="Enter your message"
-              ></textarea>
-            </div>
-            <div>
-              <button className={p.sendMessage} onClick={onSendMessageClick}>Send</button>
+              <div>
+                <textarea
+                  className={p.texArea}
+                  value={newMessageBody}
+                  onChange={onNewMessageChange}
+                  placeholder="Enter your message"
+                ></textarea>
+              </div>
+              <div>
+                <button className={p.sendMessage} onClick={onSendMessageClick}>
+                  Send
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      </div>
-    
     </div>
   );
 };

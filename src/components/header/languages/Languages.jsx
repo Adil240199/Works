@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React  from "react";
 import l from "./language.module.scss";
 
 const LanguagesBlock = () => {
   const [open, setOpen] = React.useState(false);
   const [selected, setSelected] = React.useState(0);
   const list = ["Русский", "Английский", "Казахский"];
-  const languageName = list[selected]
+  const languageName = list[selected];
   const onClickListItem = (i) => {
-    setSelected(i)
-    setOpen(false)
-  }
+    setSelected(i);
+    setOpen(false);
+  };
   return (
     <div className={l.language_Block}>
       <div className={l.languageChose}>
@@ -21,7 +21,9 @@ const LanguagesBlock = () => {
           <ul>
             {list.map((name, i) => (
               <li
-                key={i} onClick={() => onClickListItem(i)} className={selected === i ? l.active : ""}
+                key={i}
+                onClick={() => onClickListItem(i)}
+                className={selected === i ? l.active : ""}
               >
                 {name}
               </li>

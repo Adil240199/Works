@@ -1,7 +1,6 @@
 import messagesReducer from "./messages-reducer";
 import studientsReducer from "./studients-reducer";
 
-
 let store = {
   _state: {
     studients: {
@@ -20,7 +19,7 @@ let store = {
         { id: 4, message: "Yo" },
         { id: 5, message: "Yo" },
       ],
-      newMessageBody: ""
+      newMessageBody: "",
     },
   },
   _callSubscriber() {
@@ -34,13 +33,12 @@ let store = {
     this._callSubscriber = observer;
   },
 
-
   dispatch(action) {
-    this._state.studients = studientsReducer(this._state.studients , action )
-    this._state.messages = messagesReducer(this._state.studients, action)
-    
+    this._state.studients = studientsReducer(this._state.studients, action);
+    this._state.messages = messagesReducer(this._state.studients, action);
+
     this._callSubscriber(this._state);
-    },
+  },
 };
 
 export default store;

@@ -16,7 +16,7 @@
 *::before,
 *::after {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Убираем внутренние отступы */
@@ -60,7 +60,7 @@ ol[class] {
 /* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
 a:not([class]) {
   -webkit-text-decoration-skip: ink;
-          text-decoration-skip-ink: auto;
+  text-decoration-skip-ink: auto;
 }
 
 /* Упрощаем работу с изображениями */
@@ -86,11 +86,11 @@ select {
 @media (prefers-reduced-motion: reduce) {
   * {
     -webkit-animation-duration: 0.01ms !important;
-            animation-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
     -webkit-animation-iteration-count: 1 !important;
-            animation-iteration-count: 1 !important;
+    animation-iteration-count: 1 !important;
     -webkit-transition-duration: 0.01ms !important;
-            transition-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
 }
@@ -99,15 +99,17 @@ select {
     margin: 0;
     padding: 0;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     padding: 0px;
     margin: 0px;
     scroll-behavior: smooth;
     text-decoration: none;
     font-family: "Montserrat", sans-serif;
   }
-  .title-cources, h1, .welcomeText {
-    color: #48808F;
+  .title-cources,
+  h1,
+  .welcomeText {
+    color: #48808f;
   }
   body {
     width: 100%;
@@ -118,9 +120,9 @@ select {
     width: 100%;
   }
   .block-header {
-    background: #91BFCC;
+    background: #91bfcc;
     -webkit-box-shadow: 0px 3px 3px rgba(83, 167, 216, 0.5);
-            box-shadow: 0px 3px 3px rgba(83, 167, 216, 0.5);
+    box-shadow: 0px 3px 3px rgba(83, 167, 216, 0.5);
     position: fixed;
     top: 0px;
     width: 100%;
@@ -132,8 +134,8 @@ select {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     max-width: 1440px;
     margin-left: auto;
     margin-right: auto;
@@ -151,8 +153,8 @@ select {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
   .block-header .navHeader {
     width: 100%;
@@ -167,11 +169,11 @@ select {
     display: flex;
     gap: 24px;
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     font-size: 14px;
     font-style: normal;
     font-weight: 300;
@@ -185,7 +187,7 @@ select {
     height: 40px;
     padding: 5px;
     border-radius: 73px;
-    background: #48808F;
+    background: #48808f;
   }
   .block-header .signIn {
     cursor: pointer;
@@ -213,14 +215,14 @@ select {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     margin-left: auto;
     margin-right: auto;
     width: 80%;
   }
   .underSect .titleWelcome {
-    color: #91BFCC;
+    color: #91bfcc;
     margin-top: 40px;
     display: block;
     width: -webkit-max-content;
@@ -249,7 +251,7 @@ select {
     line-height: 126%;
   }
   .underSect .subTitle {
-    color: #48808F;
+    color: #48808f;
     margin-top: 18px;
     font-size: 18px;
     font-style: normal;
@@ -268,7 +270,7 @@ select {
     margin-right: auto;
     color: #fff;
     border-radius: 73px;
-    background: #48808F;
+    background: #48808f;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
@@ -311,7 +313,7 @@ select {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: distribute;
-        justify-content: space-around;
+    justify-content: space-around;
     width: 85%;
     margin-left: auto;
     margin-right: auto;
@@ -341,7 +343,7 @@ select {
     line-height: 120%;
   }
   .text_feed {
-    color: #BDBDBD;
+    color: #bdbdbd;
     font-family: "Roboto", sans-serif;
     font-weight: 300;
     font-size: 15px;
@@ -370,7 +372,7 @@ select {
   }
   .lastSection .aboutMe {
     margin: 50px 0 0 100px;
-    color: var(--text-primary, #181B32);
+    color: var(--text-primary, #181b32);
     font-size: 38px;
     font-style: normal;
     font-weight: 300;
@@ -381,7 +383,7 @@ select {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: distribute;
-        justify-content: space-around;
+    justify-content: space-around;
     padding-top: 30px;
     padding-bottom: 30px;
     width: 75%;
@@ -398,7 +400,7 @@ select {
     margin-left: 70px;
   }
   .lastSection .blockAboutMe .textName {
-    color: var(--text-primary, #181B32);
+    color: var(--text-primary, #181b32);
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
@@ -411,7 +413,7 @@ select {
   footer {
     margin-top: 100px;
     width: 100%;
-    background-color: #91BFCC;
+    background-color: #91bfcc;
     padding: 20px;
   }
   footer .block-socmedia {
@@ -419,15 +421,15 @@ select {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     max-width: 1440px;
     margin-left: auto;
     margin-right: auto;
     height: 100%;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     height: 70px;
   }
   footer .soc-media {
@@ -437,11 +439,11 @@ select {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
   footer .icon {
     width: 50px;

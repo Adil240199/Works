@@ -20,9 +20,8 @@
 //           <p className="regis">Don&#8217;t have an account?<a href="#" className="regis_link">Register</a></p>
 //           </div>
 //         </div>
-     
+
 //        );
 //     };
-    
 
 // export default RegisterLesson;

@@ -1,14 +1,18 @@
 import React from "react";
 import h from "./header.module.scss";
 import { Link } from "react-scroll";
-import { NavLink, } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import LanguagesBlock from "./languages/Languages";
+import logo from "../../images/logo.png";
 
-const Header = () => {
+const Header = (props) => {
   const [openBlock, setOpen] = React.useState(false);
-
   return (
     <header>
+      <div className={h.loginBlock}>
+        {props.isAuth ? props.login : <NavLink to={"/login"}>Login</NavLink>}
+      </div>
+
       <div className={h.main_nav}>
         <div className={h.blockLogo}>
           <NavLink
@@ -16,23 +20,21 @@ const Header = () => {
             className={h.toHome}
             activeClassName={h.activeLink}
           >
-            <img className={h.logo} src="images/logo.png" alt="logo" />
+            <img className={h.logoImg} src={logo} alt="logo" />
           </NavLink>
         </div>
 
         <nav className={`${h.navHeader} ${openBlock ? h.openMenu : ""}`}>
           <ul className={h.links}>
             <li>
-              <Link
-                activeClass={h.activeLink}
-                to="sectionId"
-                spy={true}
-                smooth={true}
-                offset={-50}
-                duration={0}
-              >
+              <NavLink activeClass={h.activeLink} to={"/Main"}>
                 Главная
-              </Link>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink activeClass={h.activeLink} to={"/Users"}>
+                Пользователи
+              </NavLink>
             </li>
             <li>
               <Link
@@ -47,24 +49,17 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link
-                activeClass={h.activeLink}
-                to="idAboutMe"
-                spy={true}
-                smooth={true}
-                offset={-90}
-                duration={0}
-              >
+              <NavLink activeClass={h.activeLink} to={"/Personality"}>
                 Обо мне
-              </Link>
+              </NavLink>
             </li>
             <li>
               <Link
                 activeClass={h.activeLink}
-                to="idFooter"
+                to="review"
                 spy={true}
                 smooth={true}
-                offset={0}
+                offset={40}
                 duration={0}
               >
                 Контакты
@@ -75,10 +70,11 @@ const Header = () => {
 
         <div className={h.rightLinks}>
           <NavLink
-            to="/Users"
+            to="/Sign"
             className={h.signIn}
             activeClassName={h.activeLink}
           >
+            {" "}
             Войти
           </NavLink>
         </div>
