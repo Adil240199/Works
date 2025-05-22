@@ -1,246 +1,130 @@
 @import "../../styles/fonts";
 @import "../../styles/variables";
 @import "../../styles/mixin";
-@import "../../styles/resetStyles";
 
-// @media screen and (min-width: 1059px) {
-.title-cources,
-h1,
-.welcomeText {
-  color: #48808f;
-}
-.loginBlock {
-  width: 100px;
-  height: 30px;
-  font-size: 1rem;
-  border: 1px solid rgba(83, 167, 216, 0.5);
-  border-radius: 3px;
-  position: absolute;
-  top: 5px;
-  right: 300px;
-  text-align: center;
-}
-header {
-  background-color: rgba(188, 228, 252, 0.5);
-  box-shadow: 0px 3px 3px rgba(83, 167, 216, 0.5);
+.sidebar {
   position: fixed;
-  z-index: 60;
-  top: 0px;
-  width: 100%;
-  height: 60px;
-  padding: 0px 30px 0px 30px;
-  @media (max-width: 1000px) {
-    max-width: 100%;
-  }
-  @media (max-width: 640px) {
-    height: 40px;
-    box-shadow: none;
-  }
-  @media (max-width: 480px) {
-    padding: 0px 10px 0px 10px;
-    height: 55px;
-  }
-}
-.main_nav {
-  display: flex;
-  align-items: center;
-  max-width: 1440px;
-  height: 60px;
-  @include center;
-  @media (max-width: 1000px) {
-    max-width: 1000%;
-  }
-  @media (max-width: 640px) {
-    max-width: 640px;
-    height: 34px;
-  }
-  @media (max-width: 480px) {
-    height: 55px;
-  }
-}
-.blockLogo {
-  @media (max-width: 640px) {
-    display: flex;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 300;
-  }
-  @media (max-width: 480px) {
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-}
-.toHome {
-  position: relative;
+  top: 0;
+  left: 0;
+  bottom: 0;
   width: 100px;
-  height: 60px;
-  position: absolute;
-  top: 0px;
-  @media (max-width: 640px) {
-    position: relative;
-    width: 70px;
-    height: 40px;
-  }
-  @media (max-width: 480px) {
-    width: 75px;
-    height: 45px;
-    position: absolute;
-    top: -20%;
-    left: 50%;
-    transform: translateX(-50%);
+  background: $header-bg;
+  box-shadow: 2px 0 6px $border;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+  z-index: 100;
+  @include respond(sm) {
+    background-color: #1e295b;
+    width: 50px;
+    padding: 1.8rem 10px;
   }
 }
-.logoImg {
-  width: 100%;
-  height: 100%;
+
+.blockLogo {
+  width: 80px;
+  .logoImg {
+    width: 100%;
+    object-fit: contain;
+  }
+  @include respond(sm) {
+    width: 40px;
+  }
 }
 
 .navHeader {
-  display: block;
   width: 100%;
-  @include center;
-  @media (max-width: 640px) {
-    z-index: 200;
-    position: absolute;
-    transform: translateX(100%);
-    transition: transform 0.2s;
-    top: 0px;
-    right: 0px;
-    height: 100vh;
-    padding: 0 0 20px 0;
-    width: 100%;
-    background-color: rgba(188, 228, 252, 0.9);
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(0);
+
+  @include respond(sm) {
+    transform: translateX(-150%);
+    z-index: 150;
+    background-color: #1e295b;
+    &.openMenu {
+      transform: translateX(0);
+    }
   }
 
-  .links {
-    min-width: max-content;
-    margin-left: 160px;
-    width: 60%;
-    height: 60px;
+  ul.links {
     display: flex;
-    gap: 14px;
-    justify-content: space-around;
+    flex-direction: column;
+    gap: 1rem;
     align-items: center;
-    font-size: 1em;
-    font-weight: 600;
-    line-height: 24px;
-    line-height: 1.5;
-    @media (max-width: 1000px) {
-      margin-left: 150px;
-    }
-    @media (max-width: 640px) {
-      display: inline-block;
-      padding-top: 100px;
-      @include center;
-      width: 100%;
-      font-size: 2rem;
-    }
+    text-align: center;
+    li a {
+      color: $accent;
+      font-weight: 600;
+      font-size: 1rem;
+      &.activeLink {
+        border-left: 4px solid $primary;
+      }
 
-    li {
-      @media (max-width: 640px) {
-        margin-bottom: 40px;
-        text-align: center;
-        letter-spacing: 2px;
+      &:hover {
+        color: darken($primary, 10%);
+      }
+
+      @include respond(sm) {
+        font-size: 0.8rem;
       }
     }
-
-    a {
-      color: #172c49;
-      cursor: pointer;
-    }
-    a.activeLink {
-      border-bottom: 1.5px solid #172c49;
-      padding-bottom: 2px;
-    }
   }
 }
 
-@media (max-width: 640px) {
-  .openMenu {
-    transform: translateX(0%);
-  }
-}
-
-.rightLinks {
-  display: flex;
-  justify-content: center; /* centers horizontally */
-  align-items: center;
-  width: 148px;
-  height: 40px;
-  padding: 5px;
-  border-radius: 73px;
-  background-color: #748db4;
-  @media (max-width: 1100px) {
-    width: 150px;
-    height: 35px;
-    padding: 0px;
-    border-radius: 73px;
-    text-align: center;
-    margin-right: 10px;
-    margin-left: 5px;
-  }
-  @media (max-width: 900px) {
-    width: 100px;
-    height: 25px;
-  }
-  @media (max-width: 640px) {
-    width: 90px;
-    height: 20px;
-    position: absolute;
-    left: 30px;
-  }
-  @media (max-width: 480px) {
-    position: relative;
-    width: 60px;
-    height: 25px;
-    padding: 0px;
-  }
-}
-.signIn {
-  display: block;
-  @include center;
-  cursor: pointer;
+.loginBlock {
+  width: auto;
+  margin: 2rem 0;
+  background: $accent;
+  border-radius: 8px;
   text-align: center;
-  color: #fff;
-  text-align: center;
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  font-style: normal;
-  font-weight: 700;
-  line-height: 28px;
-  font-size: calc(10px + 4 * (100vw / 1400));
+  padding: 0 0.5rem;
+  color: $primary;
+  font-weight: bold;
+  @include respond(sm) {
+    font-size: 0.5rem;
+  }
 }
 
-a.activeLink {
-  color: pink;
-}
 .buttonMenu {
   display: none;
-  @media (max-width: 640px) {
-    z-index: 300;
-    background-color: #2f4979;
+
+  @include respond(sm) {
     display: block;
-    width: 20px;
-    height: 20px;
-    border-radius: 50px;
-    position: relative;
-    padding-top: 4px;
+    position: fixed;
+    top: 0px;
+    left: 10px;
+    width: 2rem;
+    height: 2rem;
+    padding: 0.5rem;
+    border-radius: 50%;
     cursor: pointer;
-    @media (max-width: 480px) {
-      padding-top: 7.5px;
-      width: 25px;
-      height: 25px;
+    z-index: 200;
+
+    span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      margin: 0.25rem 0;
+      background: $primary;
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+      transform-origin: center;
     }
-  }
-  div {
-    width: 60%;
-    height: 2px;
-    border-radius: 2px;
-    background-color: #fff;
-    margin-bottom: 2px;
-    @include center;
+
+    &[aria-expanded="true"] {
+      background: transparent;
+
+      span:nth-child(1) {
+        transform: translateY(0.48rem) rotate(45deg);
+      }
+      span:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+      span:nth-child(3) {
+        transform: translateY(-0.25rem) rotate(-45deg);
+      }
+    }
   }
 }

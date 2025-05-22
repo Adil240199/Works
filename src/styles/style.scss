@@ -1,5 +1,4 @@
 @import "fonts";
-@import "variables";
 @import "mixin";
 @import "resetStyles";
 
@@ -7,57 +6,17 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  padding: 0px;
-  margin: 0px;
   scroll-behavior: smooth;
   text-decoration: none;
   font-family: "SinaNova";
   transition: 0.4s;
 }
-
-body {
-  position: relative;
-
-  min-height: 100vh;
-  width: 100%;
-  margin: 0;
-  @media (max-width: 1000px) {
-    max-width: 1000px;
-  }
-  @media (max-width: 768px) {
-    max-width: 768px;
-  }
-  @media (max-width: 480px) {
-    max-width: 480px;
-  }
-}
-
 .container {
-  @media (max-width: 1000px) {
-    max-width: 1000px;
-    min-width: 100%;
+  @media (min-width: 1440px) {
+    max-width: 1440px;
     @include center;
-  }
-  @media (max-width: 768px) {
-    width: 100%;
-    max-width: 768px;
-  }
-  @media (max-width: 480px) {
-    max-width: 480px;
   }
 }
 .app_wrapper_name {
-  @media (max-width: 1000px) {
-    max-width: 1000px;
-    min-width: 100%;
-    @include center;
-  }
-  @media (max-width: 768px) {
-    width: 100%;
-    max-width: 768px;
-  }
-  @media (max-width: 480px) {
-    max-width: 480px;
-    width: 100%;
-  }
+  padding: 5rem 0 0 10rem;
 }

@@ -1,7 +1,11 @@
+$primary: #2e0909;
+$accent: #e0af6e;
+$header-bg: #1e295b;
+$border: rgba(201, 125, 125, 0.3);
 :root {
-  --primary-color: #172c49;
-  --button-bg-color: #748db4;
-  --button-hover-bg-color: #336b87;
+  --primary-color: #272727;
+  --button-bg-color: #d7c1ad;
+  --button-hover-bg-color: #bfa18a;
   --section-max-width: 1440px;
   --font-scale: calc(14px + 16 * (100vw / 1400));
   --font-family: "Mak";

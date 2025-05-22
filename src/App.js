@@ -2,12 +2,11 @@ import React from "react";
 import "./styles/style.scss";
 import HeaderContainer from "./components/header/HeaderContainer";
 import Main from "./components/main/Main";
-import Footer from "./components/footer/Footer";
-import Sign from "./components/sign/Sign";
-import { BrowserRouter, Route, Redirect } from "react-router-dom";
+import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 import PersonalityContainer from "./components/personality/PersonalityContainer";
 import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/profile/profileContainer";
+import LoginPage from "./components/Login/Login";
 
 function App() {
   return (
@@ -15,24 +14,15 @@ function App() {
       <div className="container">
         <HeaderContainer />
         <div className="app_wrapper_name">
-          <Route exact path="/main" render={() => <Main />} />
-          <Route exact path="/sign" render={() => <Sign />} />
-          <Route
-            exact
-            path="/Personality"
-            render={() => <PersonalityContainer />}
-          />
-          <Route exact path="/Users" render={() => <UsersContainer />} />
-          <Route
-            exact
-            path="/profile/:userId?"
-            render={() => <ProfileContainer />}
-          />
-          <Route exact path="/login" render={() => <UsersContainer />} />
-
-          <Redirect from="/" to="/main" />
+          <Switch>
+            <Route exact path="/main" render={() => <Main />} />
+            <Route exact path="/personality" render={() => <PersonalityContainer />} />
+            <Route exact path="/users" render={() => <UsersContainer />} />
+            <Route exact path="/profile/:userId?" render={() => <ProfileContainer />} />
+            <Route exact path="/login" render={() => <LoginPage />} />
+            <Redirect from="/" to="/main" />
+          </Switch>
         </div>
-        <Footer />
       </div>
     </BrowserRouter>
   );

@@ -11,7 +11,7 @@ let Users = (props) => {
   }
 
   return (
-    <div style={{ paddingTop: "70px", paddingLeft: "5%" }}>
+    <div>
       <div className={users.pages}>
         {pages.map((p) => {
           return (

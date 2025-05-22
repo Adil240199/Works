@@ -82,8 +82,8 @@ export const toggleFollowingProgress= (isFetching, userId) => ({
   userId,
 });
 
-const getUsers = (dispatch) => {
+// const getUsers = (dispatch) => {
   
-}
+// }
 
 export default usersReducers;

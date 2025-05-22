@@ -8,6 +8,8 @@ import {
 } from "../../redux/messages-reducer";
 import Personality from "./Personality";
 import { connect } from "react-redux";
+import { withAuthRedirect } from "../../hoc/WithAuthRedirect";
+import { compose } from "redux";
 
 const mapStateToProps = (state) => {
   return {
@@ -17,7 +19,7 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+let mapDispatchToProps = (dispatch) => {
   return {
     updateNewStudentText: (text) => {
       let action = onStudentChangeActionCreator(text);
@@ -35,9 +37,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-const PersonalityContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps,
+export default compose(
+  connect(mapStateToProps, mapDispatchToProps),
+  withAuthRedirect
 )(Personality);
-
-export default PersonalityContainer;
