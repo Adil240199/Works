@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Works/static/css/main.43b33033.css",
-    "main.js": "/Works/static/js/main.ab2588f5.js",
+    "main.css": "/Works/static/css/main.a72e05e9.css",
+    "main.js": "/Works/static/js/main.191a9389.js",
     "static/js/787.91645fcf.chunk.js": "/Works/static/js/787.91645fcf.chunk.js",
     "static/media/logoAdil.png": "/Works/static/media/logoAdil.7d23149793ca2c0301b3.png",
     "static/media/Montserrat-VariableFont_wght.ttf": "/Works/static/media/Montserrat-VariableFont_wght.3068cdb43142f5625baf.ttf",
@@ -9,12 +9,12 @@
     "static/media/SinaNova.ttf": "/Works/static/media/SinaNova.65e64dd37363fb7f072f.ttf",
     "static/media/loading.svg": "/Works/static/media/loading.8d9c8114a8b8429d0dc8c6970d0d152a.svg",
     "index.html": "/Works/index.html",
-    "main.43b33033.css.map": "/Works/static/css/main.43b33033.css.map",
-    "main.ab2588f5.js.map": "/Works/static/js/main.ab2588f5.js.map",
+    "main.a72e05e9.css.map": "/Works/static/css/main.a72e05e9.css.map",
+    "main.191a9389.js.map": "/Works/static/js/main.191a9389.js.map",
     "787.91645fcf.chunk.js.map": "/Works/static/js/787.91645fcf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.43b33033.css",
-    "static/js/main.ab2588f5.js"
+    "static/css/main.a72e05e9.css",
+    "static/js/main.191a9389.js"
   ]
 }
