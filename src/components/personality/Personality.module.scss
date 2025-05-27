@@ -1,3 +1,6 @@
+@import "../../styles/fonts";
+@import "../../styles/variables";
+@import "../../styles/mixin";
 .topSection {
   display: flex;
   gap: 10px;
@@ -7,22 +10,22 @@
   border-radius: 5rem;
   font-size: calc(8px + 10 * (100vw / 1400));
   color: #fff;
-  background-color: #748db4;
+  background-color: $accent;
   border: none;
-}
-.button:hover {
-  background-color: #336b87;
+  &:hover {
+    background-color: #807253;
+  }
 }
 .textArea {
   padding: 10px;
   display: flex;
   border-radius: 73px;
   font-size: calc(8px + 10 * (100vw / 1400));
-  border: solid 1px #2491e0;
+  border: solid 1px $border;
 }
 .students {
   background: rgba(255, 255, 255, 0.6);
-  color: #336b87;
+  color: $primary;
   padding: 30px 0 30px 0;
   display: flex;
   gap: 10px;

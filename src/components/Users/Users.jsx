@@ -1,5 +1,5 @@
 import React from "react";
-import users from "./users.module.css";
+import users from "./users.module.scss";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
 

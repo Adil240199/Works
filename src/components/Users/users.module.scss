@@ -1,6 +1,9 @@
+@import "../../styles/fonts";
+@import "../../styles/variables";
+@import "../../styles/mixin";
 .textBold {
   font-weight: 800;
-  color: rgb(8, 46, 76);
+  color: $primary;
   font-size: 1.5rem;
 }
 .pages {
@@ -8,7 +11,6 @@
   gap: 8px;
   overflow-x: auto;
   white-space: nowrap;
-  padding: 10px;
 }
 .noPhoto {
   width: 50px;

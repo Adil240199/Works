@@ -3,11 +3,8 @@
 @import "../../styles/mixin";
 
 .sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 100px;
+  width: 150px;
+  height: 100vh;
   background: $header-bg;
   box-shadow: 2px 0 6px $border;
   display: flex;
@@ -16,8 +13,8 @@
   padding: 1rem 0;
   z-index: 100;
   @include respond(sm) {
+    width: 100px;
     background-color: #1e295b;
-    width: 50px;
     padding: 1.8rem 10px;
   }
 }
@@ -27,9 +24,6 @@
   .logoImg {
     width: 100%;
     object-fit: contain;
-  }
-  @include respond(sm) {
-    width: 40px;
   }
 }
 
@@ -64,10 +58,6 @@
       &:hover {
         color: darken($primary, 10%);
       }
-
-      @include respond(sm) {
-        font-size: 0.8rem;
-      }
     }
   }
 }
@@ -81,9 +71,6 @@
   padding: 0 0.5rem;
   color: $primary;
   font-weight: bold;
-  @include respond(sm) {
-    font-size: 0.5rem;
-  }
 }
 
 .buttonMenu {

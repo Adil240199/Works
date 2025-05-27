@@ -13,7 +13,7 @@ function App() {
     <BrowserRouter>
       <div className="container">
         <HeaderContainer />
-        <div className="app_wrapper_name">
+        <div className="app_wrapper">
           <Switch>
             <Route exact path="/main" render={() => <Main />} />
             <Route exact path="/personality" render={() => <PersonalityContainer />} />

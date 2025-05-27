@@ -3,20 +3,20 @@
 @import "resetStyles";
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   scroll-behavior: smooth;
-  text-decoration: none;
   font-family: "SinaNova";
   transition: 0.4s;
 }
 .container {
+  display: flex;
+  gap: 10px;
+
+}
+
+.app_wrapper {
   @media (min-width: 1440px) {
+    width: 100%;
     max-width: 1440px;
     @include center;
   }
-}
-.app_wrapper_name {
-  padding: 5rem 0 0 10rem;
 }
