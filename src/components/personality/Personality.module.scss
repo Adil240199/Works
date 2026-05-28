@@ -1,0 +1,164 @@
+@import "../../styles/fonts";
+@import "../../styles/variables";
+@import "../../styles/mixin";
+
+.main {
+  display: grid;
+  gap: 18px;
+}
+
+.pageHeader {
+  padding: 28px;
+  border: 1px solid $border;
+  border-radius: 8px;
+  background: $surface-3;
+  box-shadow: $shadow;
+
+  p {
+    margin-bottom: 4px;
+    color: $primary;
+    font-size: 0.78rem;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-size: 2rem;
+    line-height: 1;
+  }
+}
+
+.topSection {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 12px;
+
+  @include respond(sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.button {
+  min-height: 46px;
+  padding: 0 16px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: $surface-3;
+  background-color: $primary;
+  border: none;
+  font-weight: 900;
+  transition: transform 0.18s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.18s;
+
+  &:hover {
+    transform: translateY(-1px);
+    background-color: $primary-dark;
+  }
+}
+
+.textArea {
+  width: 100%;
+  min-height: 46px;
+  padding: 13px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  border: solid 1px $border;
+  background: $surface-3;
+  color: $ink;
+  resize: vertical;
+  outline: none;
+
+  &:focus {
+    border-color: $primary;
+    box-shadow: 0 0 0 4px rgba(139, 30, 63, 0.12);
+  }
+}
+
+.workspace {
+  display: grid;
+  gap: 14px;
+}
+
+.students {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  min-height: 420px;
+  border: 1px solid $border;
+  border-radius: 8px;
+  background: $surface-3;
+  box-shadow: $shadow;
+  overflow: hidden;
+
+  @include respond(md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dialogs {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  padding: 16px;
+  background: $primary-soft;
+  border-right: 1px solid $border;
+}
+
+.dialog a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: $primary-dark;
+  font-weight: 850;
+
+  &:hover {
+    background: $surface-3;
+  }
+}
+
+.messages {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  padding: 18px;
+}
+
+.message {
+  width: fit-content;
+  max-width: min(520px, 100%);
+  padding: 11px 13px;
+  border-radius: 8px;
+  background: $surface;
+  color: $ink;
+  font-weight: 650;
+  border: 1px solid $border;
+}
+
+.addMessageForm {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: start;
+  padding: 16px;
+  border: 1px solid $border;
+  border-radius: 8px;
+  background: $surface-3;
+  box-shadow: $shadow;
+
+  @include respond(sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.messageField {
+  min-width: 0;
+}
+
+.formControl {
+  display: grid;
+  gap: 6px;
+}
+
+.error {
+  color: $danger;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
