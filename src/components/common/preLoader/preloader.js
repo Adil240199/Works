@@ -1,6 +1,6 @@
 import React from "react";
 import loading from "../../../images/loading.svg";
-let PreLoader = (props) => {
+let PreLoader = () => {
   return (
     <div>
       <img

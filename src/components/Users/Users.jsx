@@ -11,36 +11,45 @@ let Users = (props) => {
   }
 
   return (
-    <div>
+    <section className={users.usersPage}>
+      <div className={users.pageHeader}>
+        <div>
+          <p>Student directory</p>
+          <h1>Students</h1>
+        </div>
+        <span>{props.totalUsersCount} profiles</span>
+      </div>
+
       <div className={users.pages}>
         {pages.map((p) => {
           return (
-            <span
+            <button
+              type="button"
               key={p}
               className={props.currentPage === p ? users.textBold : undefined}
               onClick={() => props.onPageChanged(p)}
             >
               {p}
-            </span>
+            </button>
           );
         })}
       </div>
 
+      <div className={users.userGrid}>
       {props.users.map((u) => (
-        <div key={u.id}>
-          <span>
-            <div>
+        <article className={users.userCard} key={u.id}>
+          <div className={users.avatarColumn}>
               <NavLink to={"/profile/" + u.id}>
                 {u.photos?.small ? (
-                  <img src={u.photos.small} alt="user" />
+                  <img src={u.photos.small} alt={u.name} />
                 ) : (
-                  <div className={users.noPhoto}>No Photo</div>
+                  <div className={users.noPhoto}>{u.name?.slice(0, 1) || "S"}</div>
                 )}
               </NavLink>
-            </div>
-            <div>
+              <div>
               {u.followed ? (
                 <button
+                  className={`${users.actionButton} ${users.secondaryButton}`}
                   disabled={props.followingInProgress.some((id) => id === u.id)}
                   onClick={() => {
                     props.toggleFollowingProgress(true, u.id);
@@ -62,10 +71,11 @@ let Users = (props) => {
                       });
                   }}
                 >
-                  UnFollow
+                  Following
                 </button>
               ) : (
                 <button
+                  className={users.actionButton}
                   disabled={props.followingInProgress.some((id) => id === u.id)}
                   onClick={() => {
                     props.toggleFollowingProgress(true, u.id);
@@ -92,20 +102,22 @@ let Users = (props) => {
                 </button>
               )}
             </div>
-          </span>
-          <span>
-            <span>
-              <div>{u.name}</div>
-              <div>{u.status}</div>
-            </span>
-            <span>
-              <div>{u.location?.country || "Unknown country"}</div>
-              <div>{u.location?.city || "Unknown city"}</div>
-            </span>
-          </span>
-        </div>
+          </div>
+
+          <div className={users.userMeta}>
+            <div>
+              <h2>{u.name}</h2>
+              <p>{u.status || "No status yet"}</p>
+            </div>
+            <div className={users.location}>
+              <span>{u.location?.country || "Unknown country"}</span>
+              <span>{u.location?.city || "Unknown city"}</span>
+            </div>
+          </div>
+        </article>
       ))}
-    </div>
+      </div>
+    </section>
   );
 };
 

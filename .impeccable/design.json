@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-28T10:00:00Z",
+  "title": "Design System: english-school",
+  "extensions": {
+    "colorMeta": {
+      "primary": { "role": "primary", "displayName": "Academic Maroon", "canonical": "#8B1E3F" },
+      "accent": { "role": "secondary", "displayName": "Golden Knowledge", "canonical": "#F6C667" },
+      "header-bg": { "role": "neutral", "displayName": "Midnight Navy", "canonical": "#1E1E2F" },
+      "neutral-bg": { "role": "neutral", "displayName": "Pure White", "canonical": "#FFFFFF" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headlines and section titles." },
+      "body": { "displayName": "Body", "purpose": "Management interfaces and content." }
+    }
+  },
+  "narrative": {
+    "northStar": "The Modern Academy",
+    "overview": "The Modern Academy aesthetic combines the structured efficiency of a digital tool with the clean, direct visual language of contemporary educational platforms.",
+    "keyCharacteristics": [
+      "High-contrast typography for readability.",
+      "Generous whitespace to prevent cognitive overload for teachers.",
+      "A restrained palette using Academic Maroon as a focal point."
+    ],
+    "dos": [
+      "Do use Montserrat for all functional/interactive text.",
+      "Do maintain a minimum of 16px padding inside all management containers."
+    ],
+    "donts": [
+      "Don't use heavy box-shadows; prefer subtle borders or background tints.",
+      "Don't overcrowd the interface; prioritize teacher efficiency through whitespace."
+    ]
+  }
+}

@@ -3,7 +3,6 @@ import {
   onStudentChangeActionCreator,
 } from "../../redux/studients-reducer";
 import {
-  updateNewMessageBodyCreator,
   SendMessageCreator,
 } from "../../redux/messages-reducer";
 import Personality from "./Personality";
@@ -15,7 +14,7 @@ const mapStateToProps = (state) => {
   return {
     stateDialogs: state.studientsReducer,
     stateMessages: state.messagesReducer,
-    newStutentPerson: state.studientsReducer.newStutentPerson,
+    newStudentPerson: state.studientsReducer.newStudentPerson,
   };
 };
 
@@ -25,14 +24,12 @@ let mapDispatchToProps = (dispatch) => {
       let action = onStudentChangeActionCreator(text);
       dispatch(action);
     },
-    addStudient: () => {
+    addStudent: () => {
       dispatch(addStudientActionCreator());
     },
-    updateNewMessageBodyCreator: (body) => {
-      dispatch(updateNewMessageBodyCreator(body));
-    },
-    sendMessage: (body) => {
-      dispatch(SendMessageCreator());
+
+    addMessage: (messageBody) => {
+      dispatch(SendMessageCreator(messageBody));
     },
   };
 };

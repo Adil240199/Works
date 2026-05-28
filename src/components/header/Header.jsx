@@ -1,33 +1,32 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import h from "./header.module.scss";
+import s from "./header.module.scss";
 import logo from "../../images/logoAdil.png";
 
 const navLinks = [
-  { to: "/main", label: "Main" },
-  { to: "/users", label: "Users" },
+  { to: "/main", label: "Dashboard" },
+  { to: "/users", label: "Students" },
   { to: "/profile", label: "Profile" },
-  { to: "/personality", label: "About me" },
+  { to: "/personality", label: "Messages" },
 ];
 
-const Header = ({ isAuth, login }) => {
+const Header = ({ isAuth, login, logout }) => {
   const [open, setOpen] = React.useState(false);
-  const getActiveClass = ({ isActive }) =>
-    isActive ? h.activeLink : undefined;
 
   return (
-    <header className={h.sidebar}>
-      <div className={h.blockLogo}>
-        <NavLink to="/main" className={getActiveClass}>
-          <img className={h.logoImg} src={logo} alt="logo" />
+    <header className={s.sidebar}>
+      <div className={s.blockLogo}>
+        <NavLink to="/main" className={s.logoLink}>
+          <img className={s.logoImg} src={logo} alt="logo" />
+          <span>Adil Academy</span>
         </NavLink>
       </div>
 
-      <nav className={`${h.navHeader} ${open ? h.openMenu : ''}`}>
-        <ul className={h.links}>
+      <nav className={`${s.navHeader} ${open ? s.openMenu : ""}`}>
+        <ul className={s.links}>
           {navLinks.map(({ to, label }) => (
             <li key={to}>
-              <NavLink to={to} className={getActiveClass}>
+              <NavLink to={to} activeClassName={s.activeLink}>
                 {label}
               </NavLink>
             </li>
@@ -44,13 +43,15 @@ const Header = ({ isAuth, login }) => {
         </ul>
       </nav>
 
-      <div className={h.loginBlock}>
-        {isAuth ? login : <NavLink to="/login">Login</NavLink>}
+      <div className={s.loginBlock}>
+        {isAuth 
+        ? <div className={s.account}> <span>{login}</span><button onClick={logout}>Logout</button> </div>
+        : <NavLink to="/login">Login</NavLink>}
       </div>
 
-
-      <div
-        className={h.buttonMenu}
+      <button
+        type="button"
+        className={s.buttonMenu}
         onClick={() => setOpen(!open)}
         aria-label="Toggle navigation"
         aria-expanded={open}
@@ -58,7 +59,7 @@ const Header = ({ isAuth, login }) => {
         <span />
         <span />
         <span />
-      </div>
+      </button>
     </header>
   );
 };

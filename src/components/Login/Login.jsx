@@ -1,81 +1,66 @@
-import React from 'react';
-import { Formik } from 'formik';
-import { useDispatch } from 'react-redux';
-import { loginUser } from '../../redux/login-reducer';
+import React from "react";
+import {Formik, Form, Field, ErrorMessage} from "formik";
+import { Input } from "../common/preLoader/FormsControls/FormsControls";
+import { required } from "../utils/validators/validators";
+import { connect } from "react-redux";
+import { login } from "../../redux/auth-reducer";
+import { Redirect } from "react-router-dom";
+import s from "./Login.module.css";
 
-const LoginForm = () => {
-  const dispatch = useDispatch();
-  const submit = (values, {setSubmitting}) => {
-    dispatch(loginUser(values));
-          setSubmitting(false);
-  }
+
+const LoginForm = (props) => {
+  if (props.isAuth) {
+    return <Redirect to="/profile" />;
+    }
+    
   return (
-    <div>
-      <h2>Login</h2>
-      <Formik
-        initialValues={{ email: '', password: '' }}
-        validate={(values) => {
-          const errors = {};
-          if (!values.email) {
-            errors.email = 'Введите email';
-          } else if (
-            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-          ) {
-            errors.email = 'Некорректный email';
-          }
-          if (!values.password) {
-            errors.password = 'Введите пароль';
-          }
-          return errors;
-        }}
-        onSubmit={submit}
-      >
-        {({
-          values,
-          errors,
-          touched,
-          handleChange,
-          handleBlur,
-          handleSubmit,
-          isSubmitting,
-        }) => (
-          <form onSubmit={handleSubmit}>
-            <div>
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.email}
-              />
-              {touched.email && errors.email && (
-                <div style={{ color: 'red' }}>{errors.email}</div>
-              )}
-            </div>
+    <main className={s.loginPage}>
+      <section className={s.loginPanel}>
+        <div className={s.copy}>
+          <p>Secure access</p>
+          <h1>Welcome back</h1>
+          <span>Open the teacher workspace to review students, profiles, and class messages.</span>
+        </div>
+        <Formik
+            initialValues={{email: "", password: "", rememberMe: false}}
+            onSubmit={(formdata) => {
+                props.login(formdata.email, formdata.password, formdata.rememberMe)
+            }}
+        >
+        
+               <Form className={s.form}>
+                    <div className={s.field}>
+                        <label htmlFor="email">Email</label>
+                        <Field id="email" name={'email'} placeholder={'Email'} component={Input} validate={required}/>
+                    </div>
+                    <ErrorMessage name="email" component="div" className={s.errorText}/>
 
-            <div>
-              <input
-                type="password"
-                name="password"
-                placeholder="Пароль"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.password}
-              />
-              {touched.password && errors.password && (
-                <div style={{ color: 'red' }}>{errors.password}</div>
-              )}
-            </div>
+                    <div className={s.field}>
+                        <label htmlFor="password">Password</label>
+                        <Field id="password" name={'password'} type={"password"}placeholder={'password'} component={Input} validate={required}/>
+                    </div>
+                    <ErrorMessage name="password" component="div" className={s.errorText}/>
 
-            <button type="submit" disabled={isSubmitting}>
-              Войти
-            </button>
-          </form>
-        )}
-      </Formik>
-    </div>
-  );
+                    <div className={s.check}>
+                        <Field id="rememberMe" type="checkbox" name={'rememberMe'} component={Input}/>
+                        <label htmlFor={'rememberMe'}> remember me </label>
+                    </div>
+
+                    <button type={'submit'}>Log in</button>
+                </Form>
+        
+
+        </Formik>
+      </section>
+    </main>
+  )
 };
 
-export default LoginForm;
+
+
+
+const mapStateToProps = (state) => ({
+  isAuth:state.auth.isAuth
+
+})
+export default connect(mapStateToProps, {login})(LoginForm)

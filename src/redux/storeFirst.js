@@ -4,7 +4,7 @@ import studientsReducer from "./studients-reducer";
 let store = {
   _state: {
     studients: {
-      newStutentPerson: "It-Kamasutra.com",
+      newStudentPerson: "It-Kamasutra.com",
       dialogs: [
         { id: 1, name: "Sasha" },
         { id: 2, name: "Tanya" },
@@ -43,5 +43,3 @@ let store = {
 
 export default store;
 window.store = store;
-
-// store OOP

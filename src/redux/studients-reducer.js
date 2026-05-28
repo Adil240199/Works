@@ -9,26 +9,26 @@ let initialState = {
     { id: 4, name: "Igor" },
     { id: 5, name: "Alex" },
   ],
-  newStutentPerson: "It-Kamasutra.com",
+  newStudentPerson: "It-Kamasutra.com",
 };
 const studientsReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_STUDENT: {
       let newStudent = {
         id: 6,
-        name: state.newStutentPerson,
+        name: state.newStudentPerson,
         likeCount: 0,
       };
       return {
         ...state,
         dialogs: [...state.dialogs, newStudent],
-        newStutentPerson: "",
+        newStudentPerson: "",
       };
     }
     case UPDATE_NEW_TEXT_STUDENT: {
       return {
         ...state,
-        newStutentPerson: action.newStudent,
+        newStudentPerson: action.newStudent,
       };
     }
     default:
