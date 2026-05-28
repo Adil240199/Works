@@ -10,7 +10,7 @@ import LoginPage from "./components/Login/Login";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <div className="container">
         <HeaderContainer />
         <div className="app_wrapper">
